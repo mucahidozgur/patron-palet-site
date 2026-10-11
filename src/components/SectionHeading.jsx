@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { fadeUp } from '../lib/motion'
 
 /**
@@ -8,7 +8,7 @@ import { fadeUp } from '../lib/motion'
 export default function SectionHeading({ eyebrow, title, highlight, description, align = 'center' }) {
   const centered = align === 'center'
   return (
-    <motion.div
+    <m.div
       variants={fadeUp}
       initial="hidden"
       whileInView="visible"
@@ -32,6 +32,6 @@ export default function SectionHeading({ eyebrow, title, highlight, description,
           {description}
         </p>
       )}
-    </motion.div>
+    </m.div>
   )
 }

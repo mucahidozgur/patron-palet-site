@@ -14,8 +14,8 @@ export function unlockScroll() {
   document.documentElement.style.overflow = ''
 }
 
-/** Sabit header için manuel kaydırma ofseti (px). */
-const HEADER_OFFSET = 76
+/** Sabit header yüksekliğini canlı ölçer (kırılım noktalarında değişir). */
+const headerOffset = () => (document.querySelector('header')?.offsetHeight ?? 80) + 8
 
 /**
  * Güvenlik ağı: hedef bölüm hâlâ görünürde değilse zorla kaydırır.
@@ -38,7 +38,7 @@ export function ensureSectionScroll(href) {
       const r2 = target.getBoundingClientRect()
       if (r2.top >= -8 && r2.top <= window.innerHeight * 0.9) return
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      const top = Math.max(0, r2.top + window.scrollY - HEADER_OFFSET)
+      const top = Math.max(0, r2.top + window.scrollY - headerOffset())
       window.scrollTo({ top, behavior: reduced ? 'auto' : 'smooth' })
     }, 400)
   }, 350)

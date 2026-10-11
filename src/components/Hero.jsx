@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { m, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 import Particles from './Particles'
 import { hero } from '../data/content'
@@ -54,22 +54,22 @@ export default function Hero() {
       <Particles className="opacity-70" count={80} />
 
       {/* Dekoratif palet çizimi (parallax) */}
-      <motion.div
+      <m.div
         aria-hidden="true"
         style={{ y: palletY }}
         className="absolute right-[-12rem] top-1/2 hidden w-[600px] -translate-y-1/2 text-gold opacity-[0.07] xl:block"
       >
         <PalletOutline className="h-auto w-full" />
-      </motion.div>
+      </m.div>
 
       {/* İçerik — sayfa yüklendiğinde aşağıdan yukarı fade-in + slide-up */}
-      <motion.div
+      <m.div
         variants={stagger}
         initial="hidden"
         animate="visible"
         className="relative z-10 mx-auto max-w-5xl px-5 text-center sm:px-8"
       >
-        <motion.div
+        <m.div
           variants={fadeUp}
           className="glass inline-flex items-center gap-2.5 rounded-full px-5 py-2"
         >
@@ -80,47 +80,47 @@ export default function Hero() {
           <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-gold-deep">
             {hero.eyebrow}
           </span>
-        </motion.div>
+        </m.div>
 
-        <motion.h1
+        <m.h1
           variants={fadeUp}
           className="mt-8 font-display text-[2.6rem] font-bold leading-[1.12] tracking-tight text-silver sm:text-6xl lg:text-7xl"
         >
           {hero.titleLine1}
           <br />
           <span className="text-gold-gradient">{hero.titleLine2}</span>
-        </motion.h1>
+        </m.h1>
 
-        <motion.p
+        <m.p
           variants={fadeUp}
           className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-mist sm:text-lg"
         >
           {hero.description}
-        </motion.p>
+        </m.p>
 
-        <motion.div
+        <m.div
           variants={fadeUp}
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
-          <motion.a
+          <m.a
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.95 }}
             href="#urunler"
             className="btn-primary"
           >
             {hero.ctaPrimary} <ArrowRight size={17} />
-          </motion.a>
-          <motion.a
+          </m.a>
+          <m.a
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.95 }}
             href="#iletisim"
             className="btn-outline"
           >
             {hero.ctaSecondary}
-          </motion.a>
-        </motion.div>
+          </m.a>
+        </m.div>
 
-        <motion.ul
+        <m.ul
           variants={fadeUp}
           className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3"
         >
@@ -133,11 +133,11 @@ export default function Hero() {
               {badge}
             </li>
           ))}
-        </motion.ul>
-      </motion.div>
+        </m.ul>
+      </m.div>
 
       {/* Kaydırma göstergesi */}
-      <motion.div
+      <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.8 }}
@@ -151,14 +151,14 @@ export default function Hero() {
           <span className="text-[10px] font-medium uppercase tracking-[0.35em] text-mist/60">
             Keşfet
           </span>
-          <motion.span
+          <m.span
             animate={{ y: [0, 7, 0] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
           >
             <ChevronDown className="text-gold" size={20} />
-          </motion.span>
+          </m.span>
         </a>
-      </motion.div>
+      </m.div>
     </section>
   )
 }

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import SectionHeading from './SectionHeading'
 import { references } from '../data/content'
 import { fadeUp } from '../lib/motion'
@@ -60,7 +60,7 @@ export default function References() {
         />
       </div>
 
-      <motion.div
+      <m.div
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
@@ -69,7 +69,7 @@ export default function References() {
       >
         <MarqueeRow items={references.sectors.items} />
         <MarqueeRow items={references.standards.items} reverse />
-      </motion.div>
+      </m.div>
     </section>
   )
 }

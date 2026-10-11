@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m } from 'framer-motion'
 import { ArrowRight, Menu, X } from 'lucide-react'
 import Logo from './Logo'
 import { nav } from '../data/content'
@@ -46,7 +46,7 @@ export default function Header() {
   }
 
   return (
-    <motion.header
+    <m.header
       initial={{ y: -72, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
@@ -56,9 +56,9 @@ export default function Header() {
           : 'border-transparent bg-transparent'
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:h-24 sm:px-6 lg:px-8">
         <a href="#anasayfa" aria-label="TR Patron Palet — Anasayfa" className="group">
-          <Logo className="h-14 w-auto sm:h-16" />
+          <Logo className="h-16 w-auto sm:h-20" />
         </a>
 
         {/* Masaüstü menü */}
@@ -76,15 +76,15 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <motion.a
+          <m.a
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.95 }}
-            href="#iletisim"
-            onClick={() => ensureSectionScroll('#iletisim')}
+            href="#teklif-form"
+            onClick={() => ensureSectionScroll('#teklif-form')}
             className="btn-primary"
           >
             Teklif Al <ArrowRight size={16} />
-          </motion.a>
+          </m.a>
         </div>
 
         {/* Mobil menü düğmesi */}
@@ -103,7 +103,7 @@ export default function Header() {
       {/* Mobil menü paneli */}
       <AnimatePresence>
         {open && (
-          <motion.nav
+          <m.nav
             id="mobil-menu"
             aria-label="Mobil menü"
             initial={{ height: 0, opacity: 0 }}
@@ -126,17 +126,17 @@ export default function Header() {
               ))}
               <li className="pt-3">
                 <a
-                  href="#iletisim"
-                  onClick={() => goTo('#iletisim')}
+                  href="#teklif-form"
+                  onClick={() => goTo('#teklif-form')}
                   className="btn-primary w-full"
                 >
                   Teklif Al <ArrowRight size={16} />
                 </a>
               </li>
             </ul>
-          </motion.nav>
+          </m.nav>
         )}
       </AnimatePresence>
-    </motion.header>
+    </m.header>
   )
 }

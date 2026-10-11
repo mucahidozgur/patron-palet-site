@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m } from 'framer-motion'
 import { Send } from 'lucide-react'
 import SectionHeading from './SectionHeading'
 import { contact, footer } from '../data/content'
@@ -43,7 +43,7 @@ export default function Contact() {
 
         <div className="mt-14 grid gap-8 lg:grid-cols-5">
           {/* Sol: iletişim bilgileri */}
-          <motion.div
+          <m.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -99,21 +99,22 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Sağ: iletişim formu */}
-          <motion.div
+          <m.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
             className="lg:col-span-3"
           >
-            <div className="glass rounded-2xl p-7 sm:p-9">
+            {/* "Teklif Al" butonlarının hedefi: formun kendisi */}
+            <div id="teklif-form" className="glass rounded-2xl p-7 sm:p-9">
               <AnimatePresence mode="wait" initial={false}>
                 {status === 'success' ? (
                   /* Başarı ekranı — çizilen onay animasyonu */
-                  <motion.div
+                  <m.div
                     key="success"
                     initial={{ opacity: 0, scale: 0.92 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -122,7 +123,7 @@ export default function Contact() {
                     className="flex flex-col items-center justify-center py-14 text-center"
                   >
                     <svg viewBox="0 0 52 52" className="h-20 w-20" aria-hidden="true">
-                      <motion.circle
+                      <m.circle
                         cx="26"
                         cy="26"
                         r="24"
@@ -133,7 +134,7 @@ export default function Contact() {
                         animate={{ pathLength: 1 }}
                         transition={{ duration: 0.8, ease: 'easeOut' }}
                       />
-                      <motion.path
+                      <m.path
                         d="M14 27l8 8 16-17"
                         fill="none"
                         stroke="#007f87"
@@ -154,9 +155,9 @@ export default function Contact() {
                     <button type="button" onClick={resetForm} className="btn-outline mt-8">
                       Yeni Mesaj Gönder
                     </button>
-                  </motion.div>
+                  </m.div>
                 ) : (
-                  <motion.form
+                  <m.form
                     key="form"
                     initial={{ opacity: 0, y: 14 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -255,11 +256,11 @@ export default function Contact() {
                       {status === 'sending' ? 'Gönderiliyor…' : 'Mesajı Gönder'}
                       {status !== 'sending' && <Send size={16} />}
                     </button>
-                  </motion.form>
+                  </m.form>
                 )}
               </AnimatePresence>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

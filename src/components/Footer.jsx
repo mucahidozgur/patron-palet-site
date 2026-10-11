@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Marka */}
           <div className="lg:col-span-4">
-            <Logo className="h-14 w-auto" />
+            <Logo className="h-16 w-auto sm:h-20" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-mist">{footer.tagline}</p>
             <div className="mt-6 flex gap-3">
               {footer.socials.map((social) => (

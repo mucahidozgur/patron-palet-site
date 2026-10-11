@@ -6,7 +6,8 @@ const GOLD_TONES = ['0,165,174', '46,168,211', '25,37,91', '152,198,231', '212,1
 /**
  * Canvas tabanlı parçacık efekti (turkuaz/lacivert toz).
  * - Düşük maliyetli (tek canvas, requestAnimationFrame)
- * - Sekme görünmezken duraklar
+ * - Dar ekranlarda parçacık sayısı azalır (CPU dostu)
+ * - Hero ekranda değilken (IntersectionObserver) ve sekme görünmezken duraklar
  * - prefers-reduced-motion tercihinde tek statik kare çizer
  */
 export default function Particles({ count = 80, className = '' }) {
@@ -18,7 +19,8 @@ export default function Particles({ count = 80, className = '' }) {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
     let raf = 0
-    let running = true
+    let tabVisible = true
+    let inView = true
     let particles = []
     let w = 0
     let h = 0
@@ -42,8 +44,12 @@ export default function Particles({ count = 80, className = '' }) {
       canvas.width = Math.round(w * dpr)
       canvas.height = Math.round(h * dpr)
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      particles = Array.from({ length: count }, spawn)
+      // Dar ekranlarda (mobil) parçacık sayısını azalt: pil + CPU dostu
+      const n = w < 640 ? Math.min(count, 40) : count
+      particles = Array.from({ length: n }, spawn)
     }
+
+    const active = () => !reduced && tabVisible && inView
 
     const draw = (t) => {
       ctx.clearRect(0, 0, w, h)
@@ -62,18 +68,29 @@ export default function Particles({ count = 80, className = '' }) {
         ctx.fillStyle = `rgba(${p.color},${alpha})`
         ctx.fill()
       }
-      if (running && !reduced) raf = requestAnimationFrame(draw)
+      if (active()) raf = requestAnimationFrame(draw)
     }
 
-    const onVisibility = () => {
-      running = document.visibilityState === 'visible'
-      if (running && !reduced) {
+    const resume = () => {
+      if (active()) {
         cancelAnimationFrame(raf)
         raf = requestAnimationFrame(draw)
       }
     }
 
+    const onVisibility = () => {
+      tabVisible = document.visibilityState === 'visible'
+      resume()
+    }
+
+    // Hero ekrandan çıkınca animasyonu tamamen durdur
+    const observer = new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting
+      resume()
+    })
+
     resize()
+    observer.observe(canvas)
     if (reduced) {
       draw(0) // tek statik kare
     } else {
@@ -83,6 +100,7 @@ export default function Particles({ count = 80, className = '' }) {
     document.addEventListener('visibilitychange', onVisibility)
     return () => {
       cancelAnimationFrame(raf)
+      observer.disconnect()
       window.removeEventListener('resize', resize)
       document.removeEventListener('visibilitychange', onVisibility)
     }

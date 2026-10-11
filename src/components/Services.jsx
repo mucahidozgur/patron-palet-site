@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import SectionHeading from './SectionHeading'
 import { services } from '../data/content'
 import { fadeUpDelay } from '../lib/motion'
@@ -16,7 +16,7 @@ export default function Services() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {services.items.map((service, i) => (
-            <motion.div
+            <m.div
               key={service.title}
               variants={fadeUpDelay(i * 0.08)}
               initial="hidden"
@@ -32,7 +32,7 @@ export default function Services() {
                 {service.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-mist">{service.text}</p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

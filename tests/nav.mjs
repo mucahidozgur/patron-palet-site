@@ -72,6 +72,32 @@ const hScroll = (page) =>
     detail: `scrollWidth=${document.documentElement.scrollWidth} innerWidth=${window.innerWidth}`,
   }))
 
+/** İlk yükleme performansı: FCP / DCL / LCP (ms) */
+const perf = (page) =>
+  page.evaluate(() => {
+    const nav = performance.getEntriesByType('navigation')[0]
+    const fcp = performance.getEntriesByName('first-contentful-paint')[0]
+    const lcp = performance.getEntriesByType('largest-contentful-paint').at(-1)
+    return {
+      dcl: Math.round(nav.domContentLoadedEventEnd),
+      load: Math.round(nav.loadEventEnd),
+      fcp: Math.round(fcp?.startTime ?? 0),
+      lcp: Math.round(lcp?.startTime ?? 0),
+    }
+  })
+
+const checkPerf = (p, check) => {
+  check(
+    p.fcp > 0 && p.fcp < 4000 && p.dcl < 5000,
+    'Performans (FCP < 4s)',
+    `fcp=${p.fcp}ms dcl=${p.dcl}ms load=${p.load}ms lcp=${p.lcp}ms`
+  )
+}
+
+/** Header logosunun yüksekliği (px) */
+const logoHeight = (page) =>
+  page.evaluate(() => Math.round(document.querySelector('header img')?.getBoundingClientRect().height ?? 0))
+
 async function testDesktop(browser) {
   console.log('\n== MASUSTU (1280x800) ==')
   const ctx = await browser.newContext(DESKTOP)
@@ -80,6 +106,9 @@ async function testDesktop(browser) {
 
   const hs = await hScroll(page)
   check(hs.ok, 'Yatay taşma yok', hs.detail)
+  checkPerf(await perf(page), check)
+  const logo = await logoHeight(page)
+  check(logo >= 72, 'Logo büyütüldü (masaüstü)', `h=${logo}px`)
 
   for (const href of SECTIONS.slice(1)) {
     await page.evaluate(() => window.scrollTo(0, 0))
@@ -98,6 +127,14 @@ async function testDesktop(browser) {
   const l = await settleLand(page, '#hakkimizda')
   check(l.ok, 'Aynı hash tekrarı -> #hakkimizda', l.detail)
 
+  // "Teklif Al" -> formun kendisine (bölüm başlığının altına)
+  await page.evaluate(() => window.scrollTo(0, 0))
+  await page.waitForTimeout(250)
+  await page.click('header a.btn-primary')
+  const hf = await page.evaluate(() => location.hash)
+  const lf = await settleLand(page, '#teklif-form')
+  check(hf === '#teklif-form' && lf.ok, 'Teklif Al -> form (#teklif-form)', `hash=${hf} ${lf.detail}`)
+
   await ctx.close()
 }
 
@@ -109,11 +146,14 @@ async function testMobile(browser, name, opts) {
 
   const hs = await hScroll(page)
   check(hs.ok, 'Yatay taşma yok', hs.detail)
+  checkPerf(await perf(page), check)
+  const logo = await logoHeight(page)
+  check(logo >= 60, 'Logo büyütüldü (mobil)', `h=${logo}px`)
 
   // Bölümler mevcut mu
   const sectionsOk = await page.evaluate(() =>
-    ['anasayfa', 'hakkimizda', 'urunler', 'hizmetler', 'referanslar', 'iletisim'].every((id) =>
-      Boolean(document.getElementById(id))
+    ['anasayfa', 'hakkimizda', 'urunler', 'hizmetler', 'referanslar', 'iletisim', 'teklif-form'].every(
+      (id) => Boolean(document.getElementById(id))
     )
   )
   check(sectionsOk, 'Tüm bölümler mevcut')
@@ -155,14 +195,15 @@ async function testMobile(browser, name, opts) {
   const l2 = await settleLand(page, '#hakkimizda')
   check(l2.ok, 'Aynı hash tekrarı (mobil) -> #hakkimizda', l2.detail)
 
-  // "Teklif Al" butonu -> İletişim
+  // "Teklif Al" butonu -> formun kendisine (İletişim bölümünün altındaki form)
   await page.evaluate(() => window.scrollTo(0, 0))
   await page.waitForTimeout(250)
   await page.tap('button[aria-label="Menüyü aç"]')
   await page.waitForTimeout(500)
   await page.tap('#mobil-menu a.btn-primary')
-  const l3 = await settleLand(page, '#iletisim')
-  check(l3.ok, 'Teklif Al -> #iletisim', l3.detail)
+  const h3 = await page.evaluate(() => location.hash)
+  const l3 = await settleLand(page, '#teklif-form')
+  check(h3 === '#teklif-form' && l3.ok, 'Teklif Al -> form (#teklif-form)', `hash=${h3} ${l3.detail}`)
 
   await ctx.close()
 }

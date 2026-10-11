@@ -44,7 +44,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 6rem; /* sabit header yüksekliği için çapa ofseti */
+    scroll-padding-top: 7rem; /* sabit header yüksekliği için çapa ofseti */
   }
 
   body {
@@ -252,6 +252,22 @@
   }
 }
 
+/* "Teklif Al" ile formun kendisine gelindiğinde kısa bir turkuaz parlama */
+#teklif-form:target {
+  border-radius: 1rem;
+  outline: 2px solid rgba(0, 165, 174, 0.55);
+  outline-offset: 6px;
+  animation: target-glow 1.6s ease-out;
+}
+@keyframes target-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 165, 174, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 26px rgba(0, 165, 174, 0);
+  }
+}
+
 /* Hareket azaltma tercihi olan kullanıcılar için */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -260,6 +276,9 @@
   .animate-marquee,
   .animate-marquee-reverse,
   .logo-shimmer {
+    animation: none;
+  }
+  #teklif-form:target {
     animation: none;
   }
 }

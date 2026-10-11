@@ -1,8 +1,9 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import SectionHeading from './SectionHeading'
 import { products } from '../data/content'
 import { fadeUpDelay } from '../lib/motion'
+import { ensureSectionScroll } from '../lib/scroll'
 
 /**
  * Ürün kartı: hover'da yukarı kalkma, altın parlama
@@ -18,7 +19,7 @@ function ProductCard({ product, index }) {
   }
 
   return (
-    <motion.article
+    <m.article
       variants={fadeUpDelay((index % 3) * 0.08)}
       initial="hidden"
       whileInView="visible"
@@ -53,14 +54,15 @@ function ProductCard({ product, index }) {
         <h3 className="mt-5 font-display text-xl font-semibold text-silver">{product.title}</h3>
         <p className="mt-2.5 text-sm leading-relaxed text-mist">{product.text}</p>
         <a
-          href="#iletisim"
+          href="#teklif-form"
+          onClick={() => ensureSectionScroll('#teklif-form')}
           className="mt-6 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-transparent transition-all duration-300 group-hover:text-gold-deep"
         >
           Teklif Al
           <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-1" />
         </a>
       </div>
-    </motion.article>
+    </m.article>
   )
 }
 

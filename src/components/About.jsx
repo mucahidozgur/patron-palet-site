@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import SectionHeading from './SectionHeading'
 import Counter from './Counter'
 import { about } from '../data/content'
@@ -21,7 +21,7 @@ export default function About() {
 
             <div className="mt-10 space-y-5">
               {about.items.map((item) => (
-                <motion.div
+                <m.div
                   key={item.title}
                   variants={fadeUp}
                   initial="hidden"
@@ -36,7 +36,7 @@ export default function About() {
                     <h3 className="font-display text-lg font-semibold text-silver">{item.title}</h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-mist">{item.text}</p>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function About() {
             />
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {about.stats.map((stat, i) => (
-                <motion.div
+                <m.div
                   key={stat.label}
                   variants={fadeUpDelay(i * 0.08)}
                   initial="hidden"
@@ -67,7 +67,7 @@ export default function About() {
                   <p className="mt-3 text-xs font-medium uppercase tracking-[0.14em] text-mist sm:text-[13px]">
                     {stat.label}
                   </p>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
