@@ -1,7 +1,7 @@
 /**
  * TR Patron Palet logosu (public/logo.png)
  * Orijinal logopatron.jpeg'den dönüştürüldü: beyaz zemin şeffaflaştırıldı,
- * siyah unsurlar gümüş-beyaza, altınlar site altınına uyarlandı.
+ * koyu unsurlar marka lacivertine (#19255b), altınlar olduğu gibi korundu.
  * Üzerinde periyodik ışık süpürmesi (shimmer) animasyonu vardır.
  */
 export default function Logo({ className = 'h-11 w-auto', alt = 'TR Patron Palet' }) {

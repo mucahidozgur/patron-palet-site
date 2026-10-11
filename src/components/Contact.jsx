@@ -28,7 +28,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="iletisim" className="relative overflow-hidden bg-ink-2/40 py-24 sm:py-32">
+    <section id="iletisim" className="relative overflow-hidden bg-ink-2 py-24 sm:py-32">
       <div
         aria-hidden="true"
         className="absolute right-[-12rem] top-[-10rem] h-[26rem] w-[26rem] rounded-full bg-gold/[0.05] blur-3xl"
@@ -51,13 +51,13 @@ export default function Contact() {
             className="lg:col-span-2"
           >
             <div className="glass h-full rounded-2xl p-7 sm:p-8">
-              <h3 className="font-display text-xl font-semibold text-white">
+              <h3 className="font-display text-xl font-semibold text-silver">
                 İletişim Bilgileri
               </h3>
               <ul className="mt-7 space-y-6">
                 {contact.infos.map((info) => (
                   <li key={info.label} className="flex items-start gap-4">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gold/30 bg-gold/10 text-gold">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gold/30 bg-gold/10 text-gold-deep">
                       <info.icon size={19} strokeWidth={1.75} />
                     </span>
                     <div className="min-w-0">
@@ -67,7 +67,7 @@ export default function Contact() {
                       {info.href ? (
                         <a
                           href={info.href}
-                          className="mt-1 block text-sm font-medium text-silver transition-colors hover:text-gold"
+                          className="mt-1 block text-sm font-medium text-silver transition-colors hover:text-gold-deep"
                         >
                           {info.value}
                         </a>
@@ -81,7 +81,7 @@ export default function Contact() {
                 ))}
               </ul>
 
-              <div className="mt-8 border-t border-white/5 pt-6">
+              <div className="mt-8 border-t border-navy/10 pt-6">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-mist/70">
                   Bizi Takip Edin
                 </p>
@@ -91,7 +91,7 @@ export default function Contact() {
                       key={social.label}
                       href={social.href}
                       aria-label={social.label}
-                      className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-mist transition-all duration-300 hover:border-gold/50 hover:bg-gold/10 hover:text-gold"
+                      className="flex h-10 w-10 items-center justify-center rounded-lg border border-navy/10 bg-navy/5 text-mist transition-all duration-300 hover:border-gold/50 hover:bg-gold/10 hover:text-gold-deep"
                     >
                       <social.icon size={17} />
                     </a>
@@ -127,7 +127,7 @@ export default function Contact() {
                         cy="26"
                         r="24"
                         fill="none"
-                        stroke="#C9A227"
+                        stroke="#00a5ae"
                         strokeWidth="1.5"
                         initial={{ pathLength: 0 }}
                         animate={{ pathLength: 1 }}
@@ -136,7 +136,7 @@ export default function Contact() {
                       <motion.path
                         d="M14 27l8 8 16-17"
                         fill="none"
-                        stroke="#D4AF37"
+                        stroke="#007f87"
                         strokeWidth="3"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -145,7 +145,7 @@ export default function Contact() {
                         transition={{ duration: 0.5, delay: 0.6, ease: 'easeOut' }}
                       />
                     </svg>
-                    <h3 className="mt-6 font-display text-2xl font-semibold text-white">
+                    <h3 className="mt-6 font-display text-2xl font-semibold text-silver">
                       {contact.success.title}
                     </h3>
                     <p className="mt-2 max-w-sm text-sm leading-relaxed text-mist">

@@ -77,14 +77,14 @@ export default function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-60" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
           </span>
-          <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-gold">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-gold-deep">
             {hero.eyebrow}
           </span>
         </motion.div>
 
         <motion.h1
           variants={fadeUp}
-          className="mt-8 font-display text-[2.6rem] font-bold leading-[1.12] tracking-tight text-white sm:text-6xl lg:text-7xl"
+          className="mt-8 font-display text-[2.6rem] font-bold leading-[1.12] tracking-tight text-silver sm:text-6xl lg:text-7xl"
         >
           {hero.titleLine1}
           <br />

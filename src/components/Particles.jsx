@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react'
 
-const GOLD_TONES = ['212,175,55', '201,162,39', '233,206,127']
+// Tema tonları: turkuaz ağırlıklı, lacivert ve markanın altın kıvılcımıyla
+const GOLD_TONES = ['0,165,174', '46,168,211', '25,37,91', '152,198,231', '212,175,55']
 
 /**
- * Canvas tabanlı altın parçacık efekti.
+ * Canvas tabanlı parçacık efekti (turkuaz/lacivert toz).
  * - Düşük maliyetli (tek canvas, requestAnimationFrame)
  * - Sekme görünmezken duraklar
  * - prefers-reduced-motion tercihinde tek statik kare çizer

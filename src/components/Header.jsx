@@ -54,7 +54,7 @@ export default function Header() {
       transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
       className={`fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color,box-shadow] duration-300 ${
         scrolled || open
-          ? 'border-white/5 bg-ink/85 shadow-lg shadow-black/25 backdrop-blur-xl'
+          ? 'border-navy/10 bg-white/85 shadow-lg shadow-navy/10 backdrop-blur-xl'
           : 'border-transparent bg-transparent'
       }`}
     >
@@ -90,7 +90,7 @@ export default function Header() {
           aria-expanded={open}
           aria-controls="mobil-menu"
           aria-label={open ? 'Menüyü kapat' : 'Menüyü aç'}
-          className="rounded-lg p-2 text-silver transition-colors hover:text-gold lg:hidden"
+          className="rounded-lg p-2 text-navy transition-colors hover:text-gold-deep lg:hidden"
         >
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
@@ -108,13 +108,13 @@ export default function Header() {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden lg:hidden"
           >
-            <ul className="space-y-1 border-t border-white/5 px-4 pb-6 pt-3 sm:px-6">
+            <ul className="space-y-1 border-t border-navy/10 px-4 pb-6 pt-3 sm:px-6">
               {nav.map((item) => (
                 <li key={item.href}>
                   <a
                     href={item.href}
                     onClick={(e) => goTo(e, item.href)}
-                    className="block rounded-lg px-3 py-3 text-sm font-medium text-silver transition-colors hover:bg-white/5 hover:text-gold"
+                    className="block rounded-lg px-3 py-3 text-sm font-medium text-navy transition-colors hover:bg-navy/5 hover:text-gold-deep"
                   >
                     {item.label}
                   </a>

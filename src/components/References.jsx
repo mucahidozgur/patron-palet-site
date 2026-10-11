@@ -35,7 +35,7 @@ function MarqueeRow({ items, reverse = false }) {
                 key={item.label}
                 className="glass mr-4 flex shrink-0 items-center gap-3 rounded-xl px-6 py-4 transition-colors duration-300 hover:border-gold/35"
               >
-                <item.icon className="shrink-0 text-gold" size={22} strokeWidth={1.75} />
+                <item.icon className="shrink-0 text-gold-deep" size={22} strokeWidth={1.75} />
                 <span className="whitespace-nowrap text-sm font-medium text-silver">
                   {item.label}
                 </span>

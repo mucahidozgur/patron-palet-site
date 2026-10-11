@@ -2,7 +2,7 @@
 
 > **YÜKÜN ALTINDA PATRON VAR**
 
-TR Patron Palet için kurumsal, prestijli ve modern tek sayfa web sitesi. Koyu antrasit zemin, altın vurgular, glassmorphism kartlar ve zarif animasyonlarla "kurumsal holding" estetiği.
+TR Patron Palet için kurumsal, prestijli ve modern tek sayfa web sitesi. Açık kurumsal tema (beyaz/gri zemin), marka laciverti (#19255b) ve turkuaz (#00a5ae) vurgularla, referans alınan honestholding.com.tr estetiği; glassmorphism kartlar ve zarif animasyonlarla "kurumsal holding" hissi.
 
 ## Teknoloji Yığını
 

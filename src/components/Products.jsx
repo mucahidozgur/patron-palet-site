@@ -25,24 +25,24 @@ function ProductCard({ product, index }) {
       viewport={{ once: true, amount: 0.3 }}
       whileHover={{ y: -6 }}
       onMouseMove={handleMouseMove}
-      className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur-md transition-colors duration-300 hover:border-gold/40"
+      className="group relative overflow-hidden rounded-2xl border border-navy/10 bg-white/80 p-7 backdrop-blur-md transition-colors duration-300 hover:border-gold/40"
     >
-      {/* Fareyi takip eden altın ışık */}
+      {/* Fareyi takip eden turkuaz ışık */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           background:
-            'radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(201,162,39,0.12), transparent 65%)',
+            'radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(0,165,174,0.14), transparent 65%)',
         }}
       />
-      {/* Altın kenarlık parlaması */}
+      {/* Turkuaz kenarlık parlaması */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           boxShadow:
-            'inset 0 0 0 1px rgba(201,162,39,0.25), 0 18px 50px -18px rgba(201,162,39,0.35)',
+            'inset 0 0 0 1px rgba(0,165,174,0.3), 0 18px 50px -18px rgba(0,165,174,0.4)',
         }}
       />
 
@@ -50,11 +50,11 @@ function ProductCard({ product, index }) {
         <span className="icon-tile transition-transform duration-300 group-hover:scale-110">
           <Icon size={22} strokeWidth={1.75} />
         </span>
-        <h3 className="mt-5 font-display text-xl font-semibold text-white">{product.title}</h3>
+        <h3 className="mt-5 font-display text-xl font-semibold text-silver">{product.title}</h3>
         <p className="mt-2.5 text-sm leading-relaxed text-mist">{product.text}</p>
         <a
           href="#iletisim"
-          className="mt-6 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-transparent transition-all duration-300 group-hover:text-gold"
+          className="mt-6 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-transparent transition-all duration-300 group-hover:text-gold-deep"
         >
           Teklif Al
           <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -66,7 +66,7 @@ function ProductCard({ product, index }) {
 
 export default function Products() {
   return (
-    <section id="urunler" className="relative bg-ink-2/40 py-24 sm:py-32">
+    <section id="urunler" className="relative bg-ink-2 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow={products.eyebrow}

@@ -28,7 +28,7 @@ export default function Services() {
               <span className="icon-tile mx-auto transition-transform duration-300 group-hover:scale-110">
                 <service.icon size={24} strokeWidth={1.75} />
               </span>
-              <h3 className="mt-6 font-display text-xl font-semibold text-white">
+              <h3 className="mt-6 font-display text-xl font-semibold text-silver">
                 {service.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-mist">{service.text}</p>

@@ -15,10 +15,10 @@ export default function SectionHeading({ eyebrow, title, highlight, description,
       viewport={{ once: true, amount: 0.4 }}
       className={`max-w-3xl ${centered ? 'mx-auto text-center' : 'text-left'}`}
     >
-      <span className="text-xs font-semibold uppercase tracking-[0.35em] text-gold">
+      <span className="text-xs font-semibold uppercase tracking-[0.35em] text-gold-deep">
         {eyebrow}
       </span>
-      <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
+      <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-silver sm:text-4xl lg:text-[2.75rem]">
         {title}
         {highlight && (
           <>

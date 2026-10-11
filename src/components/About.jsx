@@ -33,7 +33,7 @@ export default function About() {
                     <item.icon size={22} strokeWidth={1.75} />
                   </span>
                   <div>
-                    <h3 className="font-display text-lg font-semibold text-white">{item.title}</h3>
+                    <h3 className="font-display text-lg font-semibold text-silver">{item.title}</h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-mist">{item.text}</p>
                   </div>
                 </motion.div>
