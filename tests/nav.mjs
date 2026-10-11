@@ -158,6 +158,32 @@ async function testMobile(browser, name, opts) {
   )
   check(sectionsOk, 'Tüm bölümler mevcut')
 
+  // Fotoğraf yer tutucuları: hero'da 1, ürünlerde en az 3
+  const phOk = await page.evaluate(() => {
+    const heroPh = document.querySelector('#anasayfa [role="img"]')
+    const prodPhs = document.querySelectorAll('#urunler [role="img"]').length
+    return Boolean(heroPh) && prodPhs >= 3
+  })
+  check(phOk, 'Fotoğraf yer tutucuları (hero + ürünler)')
+
+  // Footer: telif metni + hızlı linkler + sosyal medya ikonları
+  const footerOk = await page.evaluate(() => {
+    const f = document.querySelector('footer')
+    if (!f) return false
+    const hasCopyright = f.textContent.includes('Tüm hakları saklıdır')
+    const quickLinks = f.querySelectorAll('nav a[href^="#"]').length >= 3
+    const socials = f.querySelectorAll('a[aria-label]').length >= 3
+    return hasCopyright && quickLinks && socials
+  })
+  check(footerOk, 'Footer: telif + hızlı linkler + sosyal medya')
+
+  // Zorunlu alanlar * ile işaretli
+  const reqOk = await page.evaluate(() => {
+    const labels = [...document.querySelectorAll('#teklif-form label')]
+    return labels.length === 4 && labels.every((l) => l.textContent.trim().includes('*'))
+  })
+  check(reqOk, 'Zorunlu alanlar * işaretli')
+
   // Hero başlığı ekrana sığıyor mu
   const heroOk = await page.evaluate(() => {
     const r = document.querySelector('h1').getBoundingClientRect()
@@ -204,6 +230,18 @@ async function testMobile(browser, name, opts) {
   const h3 = await page.evaluate(() => location.hash)
   const l3 = await settleLand(page, '#teklif-form')
   check(h3 === '#teklif-form' && l3.ok, 'Teklif Al -> form (#teklif-form)', `hash=${h3} ${l3.detail}`)
+
+  // Form gönderimi -> başarı animasyonu
+  await page.fill('#teklif-form input#ad', 'Test')
+  await page.fill('#teklif-form input#soyad', 'Kullanıcı')
+  await page.fill('#teklif-form input#email', 'test@ornek.com')
+  await page.fill('#teklif-form textarea#mesaj', 'Merhaba, palet teklifi alabilir miyim?')
+  await page.click('#teklif-form button[type="submit"]')
+  await page.waitForTimeout(2200)
+  const successOk = await page.evaluate(
+    () => document.querySelector('#teklif-form [role="status"]') !== null
+  )
+  check(successOk, 'Form gönderimi -> başarı animasyonu')
 
   await ctx.close()
 }

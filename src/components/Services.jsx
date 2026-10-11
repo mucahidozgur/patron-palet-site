@@ -23,7 +23,8 @@ export default function Services() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               whileHover={{ y: -6 }}
-              className="glass group rounded-2xl p-8 text-center transition-colors duration-300 hover:border-gold/30"
+              whileTap={{ scale: 0.95 }}
+              className="hover-glow glass group rounded-2xl p-8 text-center transition-colors duration-300 hover:border-gold/30"
             >
               <span className="icon-tile mx-auto transition-transform duration-300 group-hover:scale-110">
                 <service.icon size={24} strokeWidth={1.75} />

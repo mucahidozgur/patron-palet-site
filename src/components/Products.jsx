@@ -1,8 +1,9 @@
 import { m } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import SectionHeading from './SectionHeading'
+import PhotoPlaceholder from './PhotoPlaceholder'
 import { products } from '../data/content'
-import { fadeUpDelay } from '../lib/motion'
+import { fadeUp, fadeUpDelay } from '../lib/motion'
 import { ensureSectionScroll } from '../lib/scroll'
 
 /**
@@ -25,8 +26,9 @@ function ProductCard({ product, index }) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       whileHover={{ y: -6 }}
+      whileTap={{ scale: 0.95 }}
       onMouseMove={handleMouseMove}
-      className="group relative overflow-hidden rounded-2xl border border-navy/10 bg-white/80 p-7 backdrop-blur-md transition-colors duration-300 hover:border-gold/40"
+      className="hover-glow group relative overflow-hidden rounded-2xl border border-navy/10 bg-white/80 p-7 backdrop-blur-md transition-colors duration-300 hover:border-gold/40"
     >
       {/* Fareyi takip eden turkuaz ışık */}
       <div
@@ -76,6 +78,19 @@ export default function Products() {
           highlight={products.highlight}
           description={products.description}
         />
+
+        {/* Tesis / üretim fotoğrafları yer tutucuları — gerçek görseller buraya gelecek */}
+        <m.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="mt-12 grid gap-4 sm:gap-6 md:grid-cols-3"
+        >
+          <PhotoPlaceholder label="Üretim hattı" className="aspect-[16/10]" />
+          <PhotoPlaceholder label="Depo & sevkiyat" className="aspect-[16/10]" />
+          <PhotoPlaceholder label="Ürün detayı" className="aspect-[16/10]" />
+        </m.div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {products.items.map((product, i) => (

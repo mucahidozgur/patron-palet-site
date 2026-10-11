@@ -94,7 +94,7 @@ export default function Header() {
           aria-expanded={open}
           aria-controls="mobil-menu"
           aria-label={open ? 'Menüyü kapat' : 'Menüyü aç'}
-          className="rounded-lg p-2 text-navy transition-colors hover:text-gold-deep lg:hidden"
+          className="rounded-lg p-2 text-navy transition-transform hover:text-gold-deep active:scale-95 lg:hidden"
         >
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>

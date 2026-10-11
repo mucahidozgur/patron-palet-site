@@ -18,7 +18,7 @@ export default function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-navy/10 bg-navy/5 text-mist transition-all duration-300 hover:border-gold/50 hover:bg-gold/10 hover:text-gold-deep"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-navy/10 bg-navy/5 text-mist transition-all duration-300 hover:border-gold/50 hover:bg-gold/10 hover:text-gold-deep active:scale-95"
                 >
                   <social.icon size={17} />
                 </a>

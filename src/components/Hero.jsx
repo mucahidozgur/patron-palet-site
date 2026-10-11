@@ -1,6 +1,7 @@
 import { m, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 import Particles from './Particles'
+import PhotoPlaceholder from './PhotoPlaceholder'
 import { hero } from '../data/content'
 import { fadeUp, stagger } from '../lib/motion'
 
@@ -71,7 +72,7 @@ export default function Hero() {
       >
         <m.div
           variants={fadeUp}
-          className="glass inline-flex items-center gap-2.5 rounded-full px-5 py-2"
+          className="hover-glow glass inline-flex items-center gap-2.5 rounded-full px-5 py-2"
         >
           <span className="relative flex h-2 w-2" aria-hidden="true">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-60" />
@@ -134,6 +135,14 @@ export default function Hero() {
             </li>
           ))}
         </m.ul>
+
+        {/* Tesis fotoğrafı yer tutucusu — gerçek görsel bu alana gelecek */}
+        <m.div variants={fadeUp} className="mx-auto mt-14 w-full max-w-4xl">
+          <PhotoPlaceholder
+            label="Tesis & üretim hattı görseli"
+            className="aspect-[4/3] sm:aspect-[21/9]"
+          />
+        </m.div>
       </m.div>
 
       {/* Kaydırma göstergesi */}

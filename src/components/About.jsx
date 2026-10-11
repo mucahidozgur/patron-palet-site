@@ -27,7 +27,8 @@ export default function About() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.3 }}
-                  className="glass group flex gap-5 rounded-2xl p-6 transition-colors duration-300 hover:border-gold/30"
+                  whileTap={{ scale: 0.95 }}
+                  className="hover-glow glass group flex gap-5 rounded-2xl p-6 transition-colors duration-300 hover:border-gold/30"
                 >
                   <span className="icon-tile shrink-0 transition-transform duration-300 group-hover:scale-110">
                     <item.icon size={22} strokeWidth={1.75} />
@@ -55,7 +56,8 @@ export default function About() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.3 }}
-                  className="glass relative overflow-hidden rounded-2xl p-6 text-center transition-colors duration-300 hover:border-gold/30 sm:p-9"
+                  whileTap={{ scale: 0.95 }}
+                  className="hover-glow glass relative overflow-hidden rounded-2xl p-6 text-center transition-colors duration-300 hover:border-gold/30 sm:p-9"
                 >
                   <span
                     aria-hidden="true"

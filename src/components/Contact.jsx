@@ -50,7 +50,7 @@ export default function Contact() {
             viewport={{ once: true, amount: 0.25 }}
             className="lg:col-span-2"
           >
-            <div className="glass h-full rounded-2xl p-7 sm:p-8">
+            <div className="hover-glow glass h-full rounded-2xl p-7 sm:p-8">
               <h3 className="font-display text-xl font-semibold text-silver">
                 İletişim Bilgileri
               </h3>
@@ -91,7 +91,7 @@ export default function Contact() {
                       key={social.label}
                       href={social.href}
                       aria-label={social.label}
-                      className="flex h-10 w-10 items-center justify-center rounded-lg border border-navy/10 bg-navy/5 text-mist transition-all duration-300 hover:border-gold/50 hover:bg-gold/10 hover:text-gold-deep"
+                      className="flex h-10 w-10 items-center justify-center rounded-lg border border-navy/10 bg-navy/5 text-mist transition-all duration-300 hover:border-gold/50 hover:bg-gold/10 hover:text-gold-deep active:scale-95"
                     >
                       <social.icon size={17} />
                     </a>
@@ -110,7 +110,7 @@ export default function Contact() {
             className="lg:col-span-3"
           >
             {/* "Teklif Al" butonlarının hedefi: formun kendisi */}
-            <div id="teklif-form" className="glass rounded-2xl p-7 sm:p-9">
+            <div id="teklif-form" className="hover-glow glass rounded-2xl p-7 sm:p-9">
               <AnimatePresence mode="wait" initial={false}>
                 {status === 'success' ? (
                   /* Başarı ekranı — çizilen onay animasyonu */
