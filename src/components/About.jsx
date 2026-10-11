@@ -6,7 +6,7 @@ import { fadeUp, fadeUpDelay } from '../lib/motion'
 
 export default function About() {
   return (
-    <section id="hakkimizda" className="relative py-24 sm:py-32">
+    <section id="hakkimizda" className="relative overflow-hidden py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           {/* Sol: metin + vizyon/misyon/kalite kartları */}

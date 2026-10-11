@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowRight, Menu, X } from 'lucide-react'
 import Logo from './Logo'
 import { nav } from '../data/content'
+import { ensureSectionScroll, unlockScroll } from '../lib/scroll'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -16,35 +17,32 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Mobil menü: açıkken sayfa kaydırmayı kilitle, ESC ile kapat
+  // Mobil menü: açıkken sayfa kaydırmayı kilitle (body + html), ESC ile kapat
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') setOpen(false)
     }
     if (open) {
       document.body.style.overflow = 'hidden'
+      document.documentElement.style.overflow = 'hidden'
       window.addEventListener('keydown', onKey)
     } else {
-      document.body.style.overflow = ''
+      unlockScroll()
     }
     return () => {
       window.removeEventListener('keydown', onKey)
-      document.body.style.overflow = ''
+      unlockScroll()
     }
   }, [open])
 
-  // Mobil menüden bir bölüme gidiş: scroll kilidi önce kaldırılır,
-  // sonra hedefe yumuşak kaydırma yapılır (kilit aktifken çapa kaydırma
-  // çalışmadığı için manuel yönetiliyor).
-  const goTo = (e, href) => {
-    e.preventDefault()
-    document.body.style.overflow = ''
+  // Mobil menüden bir bölüme gidiş: kilit, tıklamanın varsayılan (çapa)
+  // davranışından önce kaldırılır — mobilde en güvenilir yol tarayıcının
+  // kendi çapa kaydırmasıdır. Güvenlik ağı, kaydırma gerçekleşmezse
+  // (örn. aynı hash'e tekrar tıklama) hedefe zorla götürür.
+  const goTo = (href) => {
+    unlockScroll()
     setOpen(false)
-    const target = document.querySelector(href)
-    if (!target) return
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' })
-    history.replaceState(null, '', href)
+    ensureSectionScroll(href)
   }
 
   return (
@@ -66,7 +64,12 @@ export default function Header() {
         {/* Masaüstü menü */}
         <nav aria-label="Ana menü" className="hidden items-center gap-8 lg:flex">
           {nav.map((item) => (
-            <a key={item.href} href={item.href} className="nav-link">
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={() => ensureSectionScroll(item.href)}
+              className="nav-link"
+            >
               {item.label}
             </a>
           ))}
@@ -77,6 +80,7 @@ export default function Header() {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.95 }}
             href="#iletisim"
+            onClick={() => ensureSectionScroll('#iletisim')}
             className="btn-primary"
           >
             Teklif Al <ArrowRight size={16} />
@@ -113,7 +117,7 @@ export default function Header() {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    onClick={(e) => goTo(e, item.href)}
+                    onClick={() => goTo(item.href)}
                     className="block rounded-lg px-3 py-3 text-sm font-medium text-navy transition-colors hover:bg-navy/5 hover:text-gold-deep"
                   >
                     {item.label}
@@ -123,7 +127,7 @@ export default function Header() {
               <li className="pt-3">
                 <a
                   href="#iletisim"
-                  onClick={(e) => goTo(e, '#iletisim')}
+                  onClick={() => goTo('#iletisim')}
                   className="btn-primary w-full"
                 >
                   Teklif Al <ArrowRight size={16} />

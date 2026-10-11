@@ -1,6 +1,7 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
 import Logo from './Logo'
 import { footer, nav, products, site } from '../data/content'
+import { ensureSectionScroll } from '../lib/scroll'
 
 export default function Footer() {
   return (
@@ -33,7 +34,11 @@ export default function Footer() {
             <ul className="mt-5 space-y-3">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="text-sm text-mist transition-colors hover:text-gold-deep">
+                  <a
+                    href={item.href}
+                    onClick={() => ensureSectionScroll(item.href)}
+                    className="text-sm text-mist transition-colors hover:text-gold-deep"
+                  >
                     {item.label}
                   </a>
                 </li>
@@ -49,7 +54,11 @@ export default function Footer() {
             <ul className="mt-5 space-y-3">
               {products.items.map((product) => (
                 <li key={product.title}>
-                  <a href="#urunler" className="text-sm text-mist transition-colors hover:text-gold-deep">
+                  <a
+                    href="#urunler"
+                    onClick={() => ensureSectionScroll('#urunler')}
+                    className="text-sm text-mist transition-colors hover:text-gold-deep"
+                  >
                     {product.title}
                   </a>
                 </li>
