@@ -1,0 +1,29 @@
+# Bağımlılıklar
+node_modules
+
+# Build çıktıları
+dist
+dist-ssr
+
+# Ortam ve yerel dosyalar
+*.local
+.env
+.env.*
+
+# Loglar
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editör / İşletim Sistemi
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel

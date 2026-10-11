@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E9CE7F"/>
+      <stop offset=".5" stop-color="#D4AF37"/>
+      <stop offset="1" stop-color="#B8860B"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0A0F1C"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="url(#g)" stroke-width="2"/>
+  <!-- palet sembolü: tabliye tahtaları, takozlar, alt tahta -->
+  <rect x="22" y="17" width="20" height="4" rx="2" fill="url(#g)"/>
+  <rect x="22" y="24.5" width="20" height="4" rx="2" fill="url(#g)" opacity=".8"/>
+  <rect x="22" y="32" width="20" height="4" rx="2" fill="url(#g)"/>
+  <rect x="26" y="38.5" width="4" height="5.5" fill="url(#g)" opacity=".8"/>
+  <rect x="34" y="38.5" width="4" height="5.5" fill="url(#g)" opacity=".8"/>
+  <rect x="42" y="38.5" width="4" height="5.5" fill="url(#g)" opacity=".8"/>
+  <rect x="22" y="46" width="20" height="4" rx="2" fill="url(#g)"/>
+</svg>
