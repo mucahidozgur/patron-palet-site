@@ -27,7 +27,7 @@ src/
 ├── data/content.js          # Tüm metinler ve içerik (tek kaynak)
 ├── lib/motion.js            # Ortak Framer Motion varyantları
 ├── components/
-│   ├── Logo.jsx             # public/logo.svg üzerinden logo
+│   ├── Logo.jsx             # public/logo.png üzerinden logo (ışık süpürmesi animasyonlu)
 │   ├── Header.jsx           # Sticky header, blur, mobil menü
 │   ├── Hero.jsx             # Parçacıklar + slogan + CTA
 │   ├── Particles.jsx        # Canvas tabanlı altın parçacık efekti

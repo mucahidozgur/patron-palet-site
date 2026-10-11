@@ -217,6 +217,36 @@
     background: rgba(201, 162, 39, 0.08);
     color: var(--color-gold);
   }
+
+  /* Logo ışık süpürmesi — logo şekline maskelenir */
+  @keyframes logo-shimmer {
+    0% {
+      transform: translateX(-140%) skewX(-18deg);
+    }
+    55%,
+    100% {
+      transform: translateX(240%) skewX(-18deg);
+    }
+  }
+  .logo-shimmer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.22) 48%,
+      rgba(233, 206, 127, 0.3) 55%,
+      transparent 64%
+    );
+    -webkit-mask-image: url('/logo.png');
+    mask-image: url('/logo.png');
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    animation: logo-shimmer 4.2s ease-in-out infinite;
+    pointer-events: none;
+  }
 }
 
 /* Hareket azaltma tercihi olan kullanıcılar için */
@@ -225,7 +255,8 @@
     scroll-behavior: auto;
   }
   .animate-marquee,
-  .animate-marquee-reverse {
+  .animate-marquee-reverse,
+  .logo-shimmer {
     animation: none;
   }
 }
