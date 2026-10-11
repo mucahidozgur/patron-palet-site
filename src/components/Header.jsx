@@ -33,6 +33,20 @@ export default function Header() {
     }
   }, [open])
 
+  // Mobil menüden bir bölüme gidiş: scroll kilidi önce kaldırılır,
+  // sonra hedefe yumuşak kaydırma yapılır (kilit aktifken çapa kaydırma
+  // çalışmadığı için manuel yönetiliyor).
+  const goTo = (e, href) => {
+    e.preventDefault()
+    document.body.style.overflow = ''
+    setOpen(false)
+    const target = document.querySelector(href)
+    if (!target) return
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' })
+    history.replaceState(null, '', href)
+  }
+
   return (
     <motion.header
       initial={{ y: -72, opacity: 0 }}
@@ -46,7 +60,7 @@ export default function Header() {
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#anasayfa" aria-label="TR Patron Palet — Anasayfa" className="group">
-          <Logo className="h-11 w-auto sm:h-12" />
+          <Logo className="h-14 w-auto sm:h-16" />
         </a>
 
         {/* Masaüstü menü */}
@@ -99,7 +113,7 @@ export default function Header() {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    onClick={() => setOpen(false)}
+                    onClick={(e) => goTo(e, item.href)}
                     className="block rounded-lg px-3 py-3 text-sm font-medium text-silver transition-colors hover:bg-white/5 hover:text-gold"
                   >
                     {item.label}
@@ -107,7 +121,11 @@ export default function Header() {
                 </li>
               ))}
               <li className="pt-3">
-                <a href="#iletisim" onClick={() => setOpen(false)} className="btn-primary w-full">
+                <a
+                  href="#iletisim"
+                  onClick={(e) => goTo(e, '#iletisim')}
+                  className="btn-primary w-full"
+                >
                   Teklif Al <ArrowRight size={16} />
                 </a>
               </li>
