@@ -1,15 +1,22 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Header() {
+  const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Aşağı kaydırınca gizlenir, yukarı kaydırınca geri gelir.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    let lastY = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 20);
+      setHidden(y > lastY && y > 140);
+      lastY = y;
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -18,22 +25,17 @@ export default function Header() {
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 bg-ink transition-all duration-500 ${
-        scrolled ? "backdrop-blur-lg border-b border-copper/10 py-4" : "py-6"
+      animate={{ y: hidden ? "-100%" : 0, opacity: 1 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+        scrolled
+          ? "border-b border-cyan/10 bg-ink/90 backdrop-blur-lg"
+          : "bg-transparent"
       }`}
     >
-      <div className="container-editorial flex items-center justify-between">
-        <Link href="/" className="group flex items-center gap-3">
-          <Image
-            src="/logopatron.jpeg"
-            alt="Patron Palet"
-            width={40}
-            height={40}
-            className="opacity-90 transition-all duration-500 group-hover:-rotate-6 group-hover:scale-110 group-hover:opacity-100"
-          />
-          <span className="hidden font-serif text-xl tracking-wider text-ivory transition-opacity duration-300 group-hover:opacity-80 md:inline">
+      <div className="container-editorial flex items-center justify-between py-5">
+        <Link href="/" className="group">
+          <span className="bg-gradient-to-r from-cyan via-ivory to-cyan bg-clip-text font-display text-lg font-bold tracking-[0.2em] text-transparent transition-all duration-500 group-hover:tracking-[0.28em] md:text-xl">
             PATRON PALET
           </span>
         </Link>
@@ -41,29 +43,35 @@ export default function Header() {
         <nav className="hidden md:flex gap-10">
           <Link
             href="#urunler"
-            className="text-sm uppercase tracking-widest text-steel hover:text-copper transition-colors duration-300"
+            className="text-sm uppercase tracking-widest text-ivory/80 hover:text-cyan transition-colors duration-300"
           >
             Ürünler
           </Link>
           <Link
-            href="#manifesto"
-            className="text-sm uppercase tracking-widest text-steel hover:text-copper transition-colors duration-300"
+            href="#hizmetler"
+            className="text-sm uppercase tracking-widest text-ivory/80 hover:text-cyan transition-colors duration-300"
           >
-            Manifesto
+            Hizmetler
           </Link>
           <Link
-            href="#iletisim"
-            className="text-sm uppercase tracking-widest text-steel hover:text-copper transition-colors duration-300"
+            href="#hakkimizda"
+            className="text-sm uppercase tracking-widest text-ivory/80 hover:text-cyan transition-colors duration-300"
           >
-            İletişim
+            Hakkımızda
+          </Link>
+          <Link
+            href="#sss"
+            className="text-sm uppercase tracking-widest text-ivory/80 hover:text-cyan transition-colors duration-300"
+          >
+            SSS
           </Link>
         </nav>
 
         <Link
           href="#iletisim"
-          className="hidden md:inline-flex text-xs uppercase tracking-widest2 text-copper border border-copper/30 px-6 py-3 hover:bg-copper hover:text-ink transition-all duration-300"
+          className="hidden md:inline-flex border border-cyan/40 px-6 py-2.5 text-xs font-bold uppercase tracking-widest2 text-cyan transition-all duration-300 hover:bg-cyan hover:text-ink"
         >
-          Keşfet
+          Teklif Al
         </Link>
       </div>
     </motion.header>

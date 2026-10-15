@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import type { Palette } from "@/types/palette";
 import { easeOutExpo } from "@/lib/animations";
@@ -12,7 +11,6 @@ type Props = {
 };
 
 export default function ProductModal({ product, onClose }: Props) {
-  const [imgFailed, setImgFailed] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
@@ -55,10 +53,6 @@ export default function ProductModal({ product, onClose }: Props) {
     };
   }, [onClose]);
 
-  const gradient = `linear-gradient(135deg, ${product.colors
-    .map((color, i) => `${color.hex} ${i * 25}%`)
-    .join(", ")})`;
-
   return (
     <motion.div
       ref={modalRef}
@@ -73,79 +67,68 @@ export default function ProductModal({ product, onClose }: Props) {
     >
       <div className="container-editorial flex min-h-full items-center py-16">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: easeOutExpo }}
-          className="grid w-full grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center"
+          transition={{ duration: 0.5, delay: 0.12, ease: easeOutExpo }}
+          className="w-full max-w-3xl border border-cyan/20 bg-surface p-8 md:p-12"
         >
-          {/* Büyük ürün görseli */}
-          <div className="relative h-[320px] overflow-hidden md:h-[520px]">
-            <div className="absolute inset-0" style={{ backgroundImage: gradient }} />
-            {product.image && !imgFailed && (
-              <Image
-                src={product.image}
-                alt={product.title}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-                onError={() => setImgFailed(true)}
-              />
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
+          <div className="flex items-center justify-between">
+            <p className="label-industrial">{product.category}</p>
+            <span className="font-mono text-xs text-ivory/40">
+              {product.year}
+            </span>
           </div>
 
-          {/* Ürün detayları */}
-          <div>
-            <p className="label-industrial mb-4">
-              {product.category} — {product.year}
-            </p>
-            <h2 className="heading-editorial text-4xl md:text-6xl">
-              {product.title}
-            </h2>
-            <p className="mt-4 text-sm font-light text-ivory/60">
-              {product.subtitle}
-            </p>
-            <p className="mt-6 font-light leading-relaxed text-ivory/70">
-              {product.description}
-            </p>
+          <h2 className="heading-display mt-6 text-3xl text-white md:text-4xl">
+            {product.title}
+          </h2>
+          <p className="mt-3 font-mono text-sm text-ivory/70">
+            {product.subtitle}
+          </p>
+          <p className="mt-6 font-light leading-relaxed text-ivory/70">
+            {product.description}
+          </p>
 
-            <ul className="mt-8 space-y-4">
-              {product.features.map((feature) => (
-                <li
-                  key={feature}
-                  className="label-industrial flex items-center gap-4 text-sm"
-                >
-                  <span className="h-px w-6 bg-copper" />
-                  {feature}
-                </li>
+          <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {product.features.map((feature) => (
+              <li
+                key={feature}
+                className="border border-ivory/10 bg-ink/60 px-4 py-3 text-sm text-ivory/90"
+              >
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8">
+            <p className="label-industrial mb-3 text-xs">Ahşap Tonları</p>
+            <div className="flex gap-1">
+              {product.colors.map((color) => (
+                <span
+                  key={color.hex}
+                  title={`${color.name} — ${color.hex}`}
+                  className="h-6 w-12"
+                  style={{ backgroundColor: color.hex }}
+                />
               ))}
-            </ul>
-
-            {/* Ahşap tonları */}
-            <div className="mt-10">
-              <p className="mb-3 text-[10px] uppercase tracking-widest2 text-ivory/40">
-                Ahşap Tonları
-              </p>
-              <div className="flex gap-1">
-                {product.colors.map((color) => (
-                  <span
-                    key={color.hex}
-                    title={`${color.name} — ${color.hex}`}
-                    className="h-6 w-12"
-                    style={{ backgroundColor: color.hex }}
-                  />
-                ))}
-              </div>
             </div>
+          </div>
 
+          <div className="mt-10 flex flex-wrap items-center gap-6">
             <a
               href="#iletisim"
               onClick={onClose}
-              className="mt-10 inline-flex items-center gap-3 bg-copper px-8 py-4 text-sm font-medium uppercase tracking-widest2 text-ink transition-colors duration-300 hover:bg-ivory"
+              className="bg-cyan px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-colors duration-300 hover:bg-white"
             >
-              Teklif Al
-              <span className="text-lg">→</span>
+              Teklif Al →
             </a>
+            <button
+              type="button"
+              onClick={onClose}
+              className="text-sm font-semibold uppercase tracking-widest2 text-ivory/70 transition-colors duration-300 hover:text-cyan"
+            >
+              Kapat
+            </button>
           </div>
         </motion.div>
       </div>
@@ -155,7 +138,7 @@ export default function ProductModal({ product, onClose }: Props) {
         type="button"
         onClick={onClose}
         aria-label="Kapat"
-        className="absolute right-6 top-6 z-10 text-2xl text-ivory transition-colors duration-300 hover:text-copper"
+        className="absolute right-6 top-6 z-10 text-2xl text-ivory transition-colors duration-300 hover:text-cyan"
       >
         ✕
       </button>

@@ -1,41 +1,39 @@
 # PATRON PALET
 
-**Endüstriyel Şiir** — ahşap palet üreticisi için karanlık, sinematik vitrin sitesi.
+Ahşap palet üreticisi vitrin sitesi — **sıfır palet üretimi, ikinci el palet alım satımı ve ihracat sandığı imalatı.** Karanlık, teknolojik ve profesyonel estetik; içerik tepeahsappalet.com'dan, tasarım dili cemabi.vercel.app referans alınarak.
 
 ## Teknoloji
 
 - **Next.js 16.4.1** (App Router, Turbopack) · **React 19.3** · **TypeScript 5** (strict)
-- **Tailwind CSS v4** · **Framer Motion 11** (parallax, perspektif, modal animasyonları)
-- Fontlar: Cormorant Garamond (serif başlıklar) + Inter (gövde) — `next/font`
+- **Tailwind CSS v4** · **Framer Motion 11** (entrance animasyonları, hide/show header)
+- Fontlar: Orbitron (geometrik başlıklar) + Inter (gövde) — `next/font`
 
 ## Tasarım Sistemi
 
 | Token | Değer | Kullanım |
 |---|---|---|
-| `ink` | `#1A1A1A` | Antrasit zemin |
-| `surface` | `#2C2C2C` | Bölüm zemini |
-| `ivory` | `#F5F0E8` | Metin |
-| `copper` | `#B87333` | Ana vurgu (bakır) |
-| `steel` | `#A9A9A9` | İkincil vurgu |
+| `ink` | `#0B0C10` | Koyu lacivert-siyah zemin |
+| `surface` | `#12151C` | Bölüm zemini |
+| `panel` | `#1F2833` | Kart paneli |
+| `ivory` | `#C5C6C7` | Metin |
+| `cyan` | `#66FCF1` | Ana vurgu |
+| `teal` | `#45A29E` | İkincil vurgu |
 
-Anahtar sınıflar: `.heading-editorial` (600 italic serif), `.label-industrial` (700 uppercase bakır etiket), `.blueprint-grid` (teknik çizim zemini), `.container-editorial`.
+Anahtar sınıflar: `.heading-display` (Orbitron 800 uppercase), `.label-industrial` (700 uppercase cyan etiket), `.tech-grid` (teknik çizim zemini), `.container-editorial`.
 
 ## Sayfa Yapısı
 
-`Header → Hero → FeaturedProduct → ProductGrid → Manifesto → Footer`
+`Header → Hero → ProductGrid → Services → About → Faq → Cta → Footer`
 
-- Kartlar tıklanınca açılan `ProductModal`: büyük ürün görseli, özellik listesi, ahşap tonları, "Teklif Al".
-- Framer Motion: scroll-linked parallax, kartlarda perspektif dönüşü; `prefers-reduced-motion` destekli.
-- Modal: ESC kapatma, focus trap, body scroll lock.
+- **Header:** aşağı kaydırınca gizlenir, yukarı kaydırınca geri gelir; gradyan metin logo (cyan→ivory→cyan).
+- **Ürünler:** tipografik spesifikasyon kartları (fotoğrafsız); kart tıklanınca `ProductModal` açılır (ESC, focus trap, scroll lock).
+- **Erişilebilirlik:** WCAG AA kontrast, `MotionConfig reducedMotion="user"`, klavye navigasyonu.
 
 ## Görseller
 
-`public/images/` altında Wikimedia Commons'tan CC0/CC-BY lisanslı palet fotoğrafları kullanılıyor — krediler için [public/images/CREDITS.md](public/images/CREDITS.md).
+Tasarım fotoğrafsız çalışır (tipografik kartlar). `public/images/` altında arşivlenen palet fotoğrafları şu an bileşenlerde kullanılmamaktadır; kullanılacaksa lisanslar için [public/images/CREDITS.md](public/images/CREDITS.md) — CC BY-SA lisanslı olanlar yazar atfı gerektirir.
 
-Yeniden üretim scriptleri (`node scripts/...`):
-- `generate-textures.mjs` — SVG ahşap dokusu yedekleri
-- `fetch-exact.mjs` — başlığı bilinen Commons fotoğraflarını indirir
-- `fetch-images.mjs` — sorgu tabanlı Commons arama + indirme
+Yardımcı scriptler (`node scripts/...`): `generate-textures.mjs` (SVG doku), `fetch-exact.mjs` / `fetch-images.mjs` (Wikimedia Commons'tan özgür lisanslı fotoğraf indirme).
 
 ## Geliştirme
 

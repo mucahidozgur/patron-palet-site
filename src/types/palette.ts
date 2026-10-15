@@ -9,12 +9,9 @@ export interface Palette {
   title: string;
   subtitle: string;
   description: string;
-  /** Mood görseli — yoksa kartta gradient fallback kullanılır. */
-  image?: string;
-  /** Ürün özellikleri (ölçü, sertifika, kapasite vb.). */
   features: string[];
   colors: Color[];
-  category: "standart" | "endüstriyel" | "ihracat" | "ağır yük" | "özel";
+  category: "sıfır üretim" | "ikinci el" | "sandık";
   featured?: boolean;
   year: number;
 }
