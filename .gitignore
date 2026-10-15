@@ -17,3 +17,5 @@ dev-server.log
 # İşletim sistemi
 .DS_Store
 Thumbs.db
+
+.vercel
