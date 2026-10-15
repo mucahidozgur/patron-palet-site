@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #1A1A1A; /* Yeni koyu antrasit zemin */
+  --color-surface: #2C2C2C; /* Yeni bölüm zemini */
+  --color-ivory: #F5F0E8; /* Ana metin rengi korunuyor */
+  --color-copper: #B87333; /* Yeni ana vurgu rengi (bakır) */
+  --color-steel: #A9A9A9; /* Yeni ikincil vurgu (çelik grisi) */
+  --font-sans: var(--font-sans), system-ui, sans-serif; /* Inter */
+  --font-serif: var(--font-serif), Georgia, serif; /* Cormorant Garamond */
+  --tracking-widest2: 0.25em;
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--color-ink);
+  color: #F5F0E8;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #B87333;
+  color: #F5F0E8;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1A1A1A; }
+::-webkit-scrollbar-thumb { background: #A9A9A9; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #B87333; }
+
+.container-editorial {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-editorial {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-editorial {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+.heading-editorial {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+.label-industrial {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-copper);
+}
+
+/* Teknik çizim (blueprint) ızgarası — katalog bölümü zemini */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(184, 115, 51, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 115, 51, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
