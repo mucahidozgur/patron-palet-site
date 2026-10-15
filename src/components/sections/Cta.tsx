@@ -11,9 +11,9 @@ export default function Cta() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
-          className="tech-grid relative overflow-hidden border border-mint/20 bg-surface p-10 text-center md:p-20"
+          className="tech-grid relative overflow-hidden border border-tan/20 bg-surface p-10 text-center md:p-20"
         >
-          <div className="glow-pulse pointer-events-none absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-mint/10 blur-[100px]" />
+          <div className="glow-pulse pointer-events-none absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-tan/10 blur-[100px]" />
 
           <p className="label-industrial relative mb-6">İletişim</p>
           <h2 className="heading-display relative text-3xl text-white md:text-5xl">
@@ -27,13 +27,13 @@ export default function Cta() {
           <div className="relative mt-12 flex flex-wrap items-center justify-center gap-6">
             <a
               href="tel:+905434329951"
-              className="bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-pine hover:shadow-[0_0_32px_rgba(52,211,153,0.5)]"
+              className="bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-caramel hover:shadow-[0_0_32px_rgba(212,163,115,0.5)]"
             >
               +90 (543) 432 99 51
             </a>
             <a
               href="mailto:info@patronpalet.com"
-              className="border border-mint/40 px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-mint transition-all duration-300 hover:bg-mint hover:text-ink hover:shadow-[0_0_24px_rgba(52,211,153,0.4)]"
+              className="border border-tan/40 px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-tan transition-all duration-300 hover:bg-tan hover:text-ink hover:shadow-[0_0_24px_rgba(212,163,115,0.4)]"
             >
               E-posta Gönder
             </a>

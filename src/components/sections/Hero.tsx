@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-ink">
       <div className="tech-grid absolute inset-0" />
-      <div className="glow-pulse pointer-events-none absolute left-1/2 top-1/3 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-mint/10 blur-[140px]" />
+      <div className="glow-pulse pointer-events-none absolute left-1/2 top-1/3 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-tan/10 blur-[140px]" />
 
       <div className="container-editorial relative z-10 pt-40 pb-24">
         <motion.p
@@ -36,7 +36,7 @@ export default function Hero() {
           </motion.span>{" "}
           <motion.span
             variants={wordFadeUp}
-            className="inline-block bg-gradient-to-r from-mint to-pine bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(52,211,153,0.4)]"
+            className="logo-shimmer inline-block bg-gradient-to-r from-tan to-caramel bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(212,163,115,0.4)]"
           >
             Palet
           </motion.span>
@@ -59,13 +59,13 @@ export default function Hero() {
         >
           <a
             href="#iletisim"
-            className="bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-pine hover:shadow-[0_0_32px_rgba(52,211,153,0.5)]"
+            className="bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-caramel hover:shadow-[0_0_32px_rgba(212,163,115,0.5)]"
           >
             Teklif Al <span className="ml-1">→</span>
           </a>
           <a
             href="#urunler"
-            className="text-sm font-semibold uppercase tracking-widest2 text-white transition-colors duration-300 hover:text-mint"
+            className="text-sm font-semibold uppercase tracking-widest2 text-white transition-colors duration-300 hover:text-tan"
           >
             Ürünleri İncele
           </a>
@@ -79,7 +79,7 @@ export default function Hero() {
           {CHIPS.map((chip) => (
             <span
               key={chip}
-              className="border border-white/15 bg-surface/60 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white/80 transition-colors duration-300 hover:border-mint hover:text-mint"
+              className="border border-white/15 bg-surface/60 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white/80 transition-colors duration-300 hover:border-tan hover:text-tan"
             >
               {chip}
             </span>

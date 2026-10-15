@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-mint/10 bg-ink">
+    <footer className="border-t border-tan/10 bg-ink">
       <div className="container-editorial py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           <div>
-            <span className="logo-shimmer bg-gradient-to-r from-mint via-white to-mint bg-clip-text font-display text-lg font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(52,211,153,0.45)]">
+            <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display text-lg font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(212,163,115,0.45)]">
               PATRON PALET
             </span>
             <p className="mt-4 max-w-xs text-base font-light text-white/60">
@@ -21,7 +21,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#urunler"
-                  className="transition-colors duration-300 hover:text-mint"
+                  className="transition-colors duration-300 hover:text-tan"
                 >
                   Ürünler
                 </Link>
@@ -29,7 +29,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#hizmetler"
-                  className="transition-colors duration-300 hover:text-mint"
+                  className="transition-colors duration-300 hover:text-tan"
                 >
                   Hizmetler
                 </Link>
@@ -37,7 +37,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#hakkimizda"
-                  className="transition-colors duration-300 hover:text-mint"
+                  className="transition-colors duration-300 hover:text-tan"
                 >
                   Hakkımızda
                 </Link>
@@ -45,7 +45,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#sss"
-                  className="transition-colors duration-300 hover:text-mint"
+                  className="transition-colors duration-300 hover:text-tan"
                 >
                   Sık Sorulan Sorular
                 </Link>
@@ -59,7 +59,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+905434329951"
-                  className="transition-colors duration-300 hover:text-mint"
+                  className="transition-colors duration-300 hover:text-tan"
                 >
                   +90 (543) 432 99 51
                 </a>
@@ -67,7 +67,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:info@patronpalet.com"
-                  className="transition-colors duration-300 hover:text-mint"
+                  className="transition-colors duration-300 hover:text-tan"
                 >
                   info@patronpalet.com
                 </a>

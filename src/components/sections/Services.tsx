@@ -66,7 +66,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: index * 0.08 }}
-              className="group border border-white/10 bg-ink p-8 transition-all duration-300 hover:-translate-y-1 hover:border-mint/40 hover:shadow-[0_14px_44px_-12px_rgba(52,211,153,0.3)]"
+              className="group border border-white/10 bg-ink p-8 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.3)]"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -75,7 +75,7 @@ export default function Services() {
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="h-10 w-10 text-mint drop-shadow-[0_0_10px_rgba(52,211,153,0.5)] transition-transform duration-300 group-hover:scale-110"
+                className="h-10 w-10 text-tan drop-shadow-[0_0_10px_rgba(212,163,115,0.5)] transition-transform duration-300 group-hover:scale-110"
                 aria-hidden="true"
               >
                 {service.icon}

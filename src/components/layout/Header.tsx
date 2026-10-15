@@ -30,7 +30,7 @@ export default function Header() {
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
         scrolled
-          ? "border-b border-mint/10 bg-ink/90 backdrop-blur-lg"
+          ? "border-b border-tan/10 bg-ink/90 backdrop-blur-lg"
           : "bg-transparent"
       }`}
     >
@@ -42,9 +42,9 @@ export default function Header() {
             alt="Patron Palet"
             width={44}
             height={44}
-            className="rounded-md ring-1 ring-mint/40 transition-all duration-500 group-hover:scale-110 group-hover:ring-mint"
+            className="rounded-md ring-1 ring-tan/40 transition-all duration-500 group-hover:scale-110 group-hover:ring-tan"
           />
-          <span className="logo-shimmer bg-gradient-to-r from-mint via-white to-mint bg-clip-text font-display text-lg font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(52,211,153,0.45)] transition-all duration-500 group-hover:tracking-[0.28em] md:text-xl">
+          <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display text-lg font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(212,163,115,0.45)] transition-all duration-500 group-hover:tracking-[0.28em] md:text-xl">
             PATRON PALET
           </span>
         </Link>
@@ -52,25 +52,25 @@ export default function Header() {
         <nav className="hidden md:flex gap-10">
           <Link
             href="#urunler"
-            className="text-sm uppercase tracking-widest text-white/80 hover:text-mint transition-colors duration-300"
+            className="text-sm uppercase tracking-widest text-white/80 hover:text-tan transition-colors duration-300"
           >
             Ürünler
           </Link>
           <Link
             href="#hizmetler"
-            className="text-sm uppercase tracking-widest text-white/80 hover:text-mint transition-colors duration-300"
+            className="text-sm uppercase tracking-widest text-white/80 hover:text-tan transition-colors duration-300"
           >
             Hizmetler
           </Link>
           <Link
             href="#hakkimizda"
-            className="text-sm uppercase tracking-widest text-white/80 hover:text-mint transition-colors duration-300"
+            className="text-sm uppercase tracking-widest text-white/80 hover:text-tan transition-colors duration-300"
           >
             Hakkımızda
           </Link>
           <Link
             href="#sss"
-            className="text-sm uppercase tracking-widest text-white/80 hover:text-mint transition-colors duration-300"
+            className="text-sm uppercase tracking-widest text-white/80 hover:text-tan transition-colors duration-300"
           >
             SSS
           </Link>
@@ -78,7 +78,7 @@ export default function Header() {
 
         <Link
           href="#iletisim"
-          className="hidden md:inline-flex border border-mint/40 px-6 py-2.5 text-xs font-bold uppercase tracking-widest2 text-mint transition-all duration-300 hover:bg-mint hover:text-ink hover:shadow-[0_0_24px_rgba(52,211,153,0.4)]"
+          className="hidden md:inline-flex border border-tan/40 px-6 py-2.5 text-xs font-bold uppercase tracking-widest2 text-tan transition-all duration-300 hover:bg-tan hover:text-ink hover:shadow-[0_0_24px_rgba(212,163,115,0.4)]"
         >
           Teklif Al
         </Link>

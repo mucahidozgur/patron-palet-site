@@ -70,7 +70,7 @@ export default function ProductModal({ product, onClose }: Props) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.12, ease: easeOutExpo }}
-          className="w-full max-w-3xl border border-mint/20 bg-surface p-8 shadow-[0_0_60px_-16px_rgba(52,211,153,0.3)] md:p-12"
+          className="w-full max-w-3xl border border-tan/20 bg-surface p-8 shadow-[0_0_60px_-16px_rgba(212,163,115,0.3)] md:p-12"
         >
           <div className="flex items-center justify-between">
             <p className="label-industrial">{product.category}</p>
@@ -118,14 +118,14 @@ export default function ProductModal({ product, onClose }: Props) {
             <a
               href="#iletisim"
               onClick={onClose}
-              className="bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-pine hover:shadow-[0_0_32px_rgba(52,211,153,0.5)]"
+              className="bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-caramel hover:shadow-[0_0_32px_rgba(212,163,115,0.5)]"
             >
               Teklif Al →
             </a>
             <button
               type="button"
               onClick={onClose}
-              className="text-sm font-semibold uppercase tracking-widest2 text-white/70 transition-colors duration-300 hover:text-mint"
+              className="text-sm font-semibold uppercase tracking-widest2 text-white/70 transition-colors duration-300 hover:text-tan"
             >
               Kapat
             </button>
@@ -138,7 +138,7 @@ export default function ProductModal({ product, onClose }: Props) {
         type="button"
         onClick={onClose}
         aria-label="Kapat"
-        className="absolute right-6 top-6 z-10 text-2xl text-white transition-colors duration-300 hover:text-mint"
+        className="absolute right-6 top-6 z-10 text-2xl text-white transition-colors duration-300 hover:text-tan"
       >
         ✕
       </button>
