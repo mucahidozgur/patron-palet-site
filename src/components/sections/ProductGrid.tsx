@@ -21,10 +21,10 @@ export default function ProductGrid() {
           className="mb-16 max-w-2xl"
         >
           <p className="label-industrial mb-6">Ürün Kataloğu</p>
-          <h2 className="heading-display text-3xl text-orange md:text-5xl">
+          <h2 className="heading-display text-3xl text-white md:text-5xl">
             Ürünlerimiz
           </h2>
-          <p className="mt-6 font-light leading-relaxed text-ivory/60">
+          <p className="mt-6 font-light leading-relaxed text-white/60">
             Stoklarımızdaki ürün çeşitliliği ile belirlenen zaman çizelgesi
             dahilinde, ekonomik ve garantili ürün hizmeti.
           </p>

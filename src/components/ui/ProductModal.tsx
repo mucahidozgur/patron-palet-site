@@ -70,22 +70,22 @@ export default function ProductModal({ product, onClose }: Props) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.12, ease: easeOutExpo }}
-          className="w-full max-w-3xl border border-orange/20 bg-surface p-8 shadow-[0_0_60px_-16px_rgba(255,106,0,0.25)] md:p-12"
+          className="w-full max-w-3xl border border-mint/20 bg-surface p-8 shadow-[0_0_60px_-16px_rgba(52,211,153,0.3)] md:p-12"
         >
           <div className="flex items-center justify-between">
             <p className="label-industrial">{product.category}</p>
-            <span className="font-mono text-xs text-ivory/40">
+            <span className="font-mono text-xs text-white/40">
               {product.year}
             </span>
           </div>
 
-          <h2 className="heading-display mt-6 text-3xl text-orange md:text-4xl">
+          <h2 className="heading-display mt-6 text-3xl text-white md:text-4xl">
             {product.title}
           </h2>
-          <p className="mt-3 font-mono text-sm text-ivory/70">
+          <p className="mt-3 font-mono text-sm text-white/70">
             {product.subtitle}
           </p>
-          <p className="mt-6 font-light leading-relaxed text-ivory/70">
+          <p className="mt-6 font-light leading-relaxed text-white/70">
             {product.description}
           </p>
 
@@ -93,7 +93,7 @@ export default function ProductModal({ product, onClose }: Props) {
             {product.features.map((feature) => (
               <li
                 key={feature}
-                className="border border-ivory/10 bg-ink/60 px-4 py-3 text-sm text-ivory/90"
+                className="border border-white/10 bg-ink/60 px-4 py-3 text-sm text-white/90"
               >
                 {feature}
               </li>
@@ -118,14 +118,14 @@ export default function ProductModal({ product, onClose }: Props) {
             <a
               href="#iletisim"
               onClick={onClose}
-              className="bg-orange px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-amber hover:shadow-[0_0_32px_rgba(255,106,0,0.45)]"
+              className="bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-pine hover:shadow-[0_0_32px_rgba(52,211,153,0.5)]"
             >
               Teklif Al →
             </a>
             <button
               type="button"
               onClick={onClose}
-              className="text-sm font-semibold uppercase tracking-widest2 text-ivory/70 transition-colors duration-300 hover:text-orange"
+              className="text-sm font-semibold uppercase tracking-widest2 text-white/70 transition-colors duration-300 hover:text-mint"
             >
               Kapat
             </button>
@@ -138,7 +138,7 @@ export default function ProductModal({ product, onClose }: Props) {
         type="button"
         onClick={onClose}
         aria-label="Kapat"
-        className="absolute right-6 top-6 z-10 text-2xl text-ivory transition-colors duration-300 hover:text-orange"
+        className="absolute right-6 top-6 z-10 text-2xl text-white transition-colors duration-300 hover:text-mint"
       >
         ✕
       </button>

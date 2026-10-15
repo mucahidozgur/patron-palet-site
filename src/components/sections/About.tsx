@@ -19,18 +19,18 @@ export default function About() {
           transition={{ duration: 0.7 }}
         >
           <p className="label-industrial mb-6">Hakkımızda</p>
-          <h2 className="heading-display text-3xl text-orange md:text-5xl">
+          <h2 className="heading-display text-3xl text-white md:text-5xl">
             Yılların Tecrübesi,
-            <span className="block bg-gradient-to-r from-orange to-amber bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(255,106,0,0.3)]">
+            <span className="block bg-gradient-to-r from-mint to-pine bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(52,211,153,0.35)]">
               Aynı Kalite
             </span>
           </h2>
-          <p className="mt-8 font-light leading-relaxed text-ivory/60">
+          <p className="mt-8 font-light leading-relaxed text-white/60">
             Alanında uzman, deneyimli kadromuz ile yılların vermiş olduğu
             tecrübe ve birikim sayesinde, müşterilerimize her zaman aynı
             kalitede hizmet vermek için çalışmaktayız.
           </p>
-          <p className="mt-6 font-light leading-relaxed text-ivory/60">
+          <p className="mt-6 font-light leading-relaxed text-white/60">
             Müşteri beklentileri doğrultusunda özel ve standart palet üretimi
             yaparak tüm isteklerinizi karşılamaktayız. Tüm ahşap palet ürün ve
             hizmetlerimizde garanti ve kalite ile her zaman yanınızdayız.
@@ -47,7 +47,7 @@ export default function About() {
           {values.map((value) => (
             <div
               key={value}
-              className="flex items-center gap-5 border border-ivory/10 bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-orange/40 hover:shadow-[0_14px_44px_-12px_rgba(255,106,0,0.2)]"
+              className="flex items-center gap-5 border border-white/10 bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-mint/40 hover:shadow-[0_14px_44px_-12px_rgba(52,211,153,0.25)]"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -56,12 +56,12 @@ export default function About() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="h-6 w-6 shrink-0 text-orange drop-shadow-[0_0_8px_rgba(255,106,0,0.5)]"
+                className="h-6 w-6 shrink-0 text-mint drop-shadow-[0_0_8px_rgba(52,211,153,0.5)]"
                 aria-hidden="true"
               >
                 <path d="M20 6L9 17l-5-5" />
               </svg>
-              <span className="text-base font-medium text-ivory">
+              <span className="text-base font-medium text-white">
                 {value}
               </span>
             </div>

@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #0A0A0A;
-  --color-surface: #141414;
-  --color-panel: #1F1B17;
-  --color-ivory: #E8E2D8;
-  --color-orange: #FF6A00;
-  --color-amber: #FFB347;
+  --color-ink: #0A1F17;
+  --color-surface: #0E261C;
+  --color-panel: #163527;
+  --color-ivory: #FFFFFF;
+  --color-mint: #34D399;
+  --color-pine: #86EFAC;
   --font-sans: var(--font-sans), system-ui, sans-serif;
   --font-display: var(--font-display), system-ui, sans-serif;
   --tracking-widest2: 0.25em;
@@ -19,14 +19,14 @@ body {
 }
 
 ::selection {
-  background: #FF6A00;
-  color: #0A0A0A;
+  background: #34D399;
+  color: #0A1F17;
 }
 
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #0A0A0A; }
-::-webkit-scrollbar-thumb { background: #FFB347; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #FF6A00; }
+::-webkit-scrollbar-track { background: #0A1F17; }
+::-webkit-scrollbar-thumb { background: #10B981; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #34D399; }
 
 @media (prefers-reduced-motion: no-preference) {
   html {
@@ -58,20 +58,20 @@ body {
   text-transform: uppercase;
 }
 
-/* Turuncu endüstriyel etiket */
+/* Nane yeşili endüstriyel etiket */
 .label-industrial {
   font-family: var(--font-sans), system-ui, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: var(--color-orange);
+  color: var(--color-mint);
 }
 
 /* Teknik çizim ızgarası */
 .tech-grid {
   background-image:
-    linear-gradient(rgba(255, 106, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 106, 0, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(52, 211, 153, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(52, 211, 153, 0.05) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
