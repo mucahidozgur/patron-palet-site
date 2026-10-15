@@ -75,9 +75,9 @@ export default function ProductCard({ product, index, onSelect }: Props) {
           />
         )}
 
-        {/* Koyu overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-transparent" />
-        <div className="absolute inset-0 bg-ink/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        {/* Koyu overlay — görselin altı okunaklı kalacak kadar hafif */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
+        <div className="absolute inset-0 bg-ink/25 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
         {/* Ürün kategorisi */}
         <p className="label-industrial absolute left-6 top-6 z-10 text-sm">
@@ -91,7 +91,7 @@ export default function ProductCard({ product, index, onSelect }: Props) {
 
         {/* Ürün ismi */}
         <div className="absolute bottom-8 left-8 right-8 z-10 transition-transform duration-500 group-hover:-translate-y-1">
-          <h3 className="heading-editorial text-5xl text-ivory md:text-6xl">
+          <h3 className="heading-editorial text-4xl text-ivory md:text-5xl">
             {product.title}
           </h3>
         </div>

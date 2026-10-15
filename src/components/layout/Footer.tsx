@@ -10,7 +10,7 @@ export default function Footer() {
               <p className="font-serif text-xl tracking-wider text-ivory">
                 PATRON PALET
               </p>
-              <p className="mt-4 max-w-xs text-sm font-light text-ivory/50">
+              <p className="mt-4 max-w-xs text-base font-light text-ivory/60">
                 Dayanıklı, sürdürülebilir ve standartlara uygun ahşap palet
                 üretimi.
               </p>
@@ -18,7 +18,7 @@ export default function Footer() {
 
             <div>
               <p className="label-industrial mb-6">Hızlı Linkler</p>
-              <ul className="space-y-3 text-sm text-ivory/60">
+              <ul className="space-y-3 text-base text-ivory/70">
                 <li>
                   <Link
                     href="#urunler"
@@ -48,7 +48,7 @@ export default function Footer() {
 
             <div>
               <p className="label-industrial mb-6">İletişim Bilgileri</p>
-              <ul className="space-y-3 text-sm text-ivory/60">
+              <ul className="space-y-3 text-base text-ivory/70">
                 <li>Fabrika Cad. No: 12, İkitelli OSB, İstanbul</li>
                 <li>+90 212 000 00 00</li>
                 <li>info@patronpalet.com</li>
@@ -56,7 +56,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-16 border-t border-ivory/5 pt-8 text-center text-xs text-ivory/40">
+          <div className="mt-16 border-t border-ivory/5 pt-8 text-center text-sm text-ivory/50">
             © 2025 Patron Palet. Tüm hakları saklıdır.
           </div>
         </div>

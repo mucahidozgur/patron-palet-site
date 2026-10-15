@@ -26,7 +26,7 @@ export default function ProductGrid() {
           className="mb-20 max-w-2xl"
         >
           <p className="label-industrial mb-6">Ürün Kataloğu</p>
-          <h2 className="heading-editorial text-5xl leading-tight md:text-7xl">
+          <h2 className="heading-editorial text-4xl leading-tight md:text-6xl">
             Dayanıklılık ve <span className="text-copper">Mühendislik</span>
           </h2>
           <p className="mt-6 font-light leading-relaxed text-ivory/50">

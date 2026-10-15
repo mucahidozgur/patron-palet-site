@@ -27,7 +27,7 @@ export default function Manifesto() {
         className="container-editorial py-32 text-center"
       >
         <p className="label-industrial mb-10">Manifesto</p>
-        <blockquote className="heading-editorial text-5xl leading-tight md:text-7xl lg:text-8xl">
+        <blockquote className="heading-editorial text-4xl leading-tight md:text-6xl lg:text-7xl">
           “Ahşap, doğanın en dürüst malzemesidir.”
         </blockquote>
         <p className="label-industrial mt-12">— Patron Palet Manifestosu</p>

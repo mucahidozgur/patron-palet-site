@@ -91,7 +91,7 @@ export default function ProductModal({ product, onClose }: Props) {
                 onError={() => setImgFailed(true)}
               />
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
           </div>
 
           {/* Ürün detayları */}
@@ -99,7 +99,7 @@ export default function ProductModal({ product, onClose }: Props) {
             <p className="label-industrial mb-4">
               {product.category} — {product.year}
             </p>
-            <h2 className="heading-editorial text-5xl md:text-7xl">
+            <h2 className="heading-editorial text-4xl md:text-6xl">
               {product.title}
             </h2>
             <p className="mt-4 text-sm font-light text-ivory/60">

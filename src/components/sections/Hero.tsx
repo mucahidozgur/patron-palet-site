@@ -24,7 +24,7 @@ export default function Hero() {
           onError={() => setImgFailed(true)}
         />
       )}
-      <div className="absolute inset-0 bg-ink/80" />
+      <div className="absolute inset-0 bg-ink/70" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/60" />
 
       <div className="container-editorial relative z-10 pt-40 pb-24">
@@ -39,7 +39,7 @@ export default function Hero() {
         <motion.h1
           {...fadeUp}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="heading-editorial text-7xl leading-[1.02] md:text-8xl lg:text-9xl"
+          className="heading-editorial text-6xl leading-[1.02] md:text-7xl lg:text-8xl"
         >
           PATRON PALET
         </motion.h1>
@@ -61,7 +61,7 @@ export default function Hero() {
         <motion.p
           {...fadeUp}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="mt-10 max-w-2xl text-xl font-light leading-relaxed text-ivory/70 md:text-2xl"
+          className="mt-10 max-w-2xl text-lg font-light leading-relaxed text-ivory/70 md:text-xl"
         >
           Keresteyi yüke, yükü güvene dönüştürüyoruz. Isıl işlemli, sertifikalı
           ve milimetrik standartlarda üretilen ahşap paletler — lojistiğin

@@ -50,7 +50,7 @@ export default function FeaturedProduct() {
 
         <motion.div style={{ y: contentY }}>
           <p className="label-industrial mb-6">Öne Çıkan Ürün</p>
-          <h2 className="heading-editorial text-5xl leading-none md:text-8xl">
+          <h2 className="heading-editorial text-4xl leading-none md:text-7xl">
             {featured.title}
           </h2>
           <p className="mt-8 max-w-md font-light leading-relaxed text-ivory/60">
