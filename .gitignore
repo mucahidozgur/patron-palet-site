@@ -8,6 +8,7 @@ out/
 # Loglar ve geçici dosyalar
 *.log
 dev-server.log
+*.tsbuildinfo
 
 # Ortam değişkenleri
 .env
