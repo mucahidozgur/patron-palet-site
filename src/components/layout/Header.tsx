@@ -29,13 +29,13 @@ export default function Header() {
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
         scrolled
-          ? "border-b border-cyan/10 bg-ink/90 backdrop-blur-lg"
+          ? "border-b border-orange/10 bg-ink/90 backdrop-blur-lg"
           : "bg-transparent"
       }`}
     >
       <div className="container-editorial flex items-center justify-between py-5">
         <Link href="/" className="group">
-          <span className="bg-gradient-to-r from-cyan via-ivory to-cyan bg-clip-text font-display text-lg font-bold tracking-[0.2em] text-transparent transition-all duration-500 group-hover:tracking-[0.28em] md:text-xl">
+          <span className="logo-shimmer bg-gradient-to-r from-orange via-amber to-orange bg-clip-text font-display text-lg font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_14px_rgba(255,106,0,0.35)] transition-all duration-500 group-hover:tracking-[0.28em] md:text-xl">
             PATRON PALET
           </span>
         </Link>
@@ -43,25 +43,25 @@ export default function Header() {
         <nav className="hidden md:flex gap-10">
           <Link
             href="#urunler"
-            className="text-sm uppercase tracking-widest text-ivory/80 hover:text-cyan transition-colors duration-300"
+            className="text-sm uppercase tracking-widest text-ivory/80 hover:text-orange transition-colors duration-300"
           >
             Ürünler
           </Link>
           <Link
             href="#hizmetler"
-            className="text-sm uppercase tracking-widest text-ivory/80 hover:text-cyan transition-colors duration-300"
+            className="text-sm uppercase tracking-widest text-ivory/80 hover:text-orange transition-colors duration-300"
           >
             Hizmetler
           </Link>
           <Link
             href="#hakkimizda"
-            className="text-sm uppercase tracking-widest text-ivory/80 hover:text-cyan transition-colors duration-300"
+            className="text-sm uppercase tracking-widest text-ivory/80 hover:text-orange transition-colors duration-300"
           >
             Hakkımızda
           </Link>
           <Link
             href="#sss"
-            className="text-sm uppercase tracking-widest text-ivory/80 hover:text-cyan transition-colors duration-300"
+            className="text-sm uppercase tracking-widest text-ivory/80 hover:text-orange transition-colors duration-300"
           >
             SSS
           </Link>
@@ -69,7 +69,7 @@ export default function Header() {
 
         <Link
           href="#iletisim"
-          className="hidden md:inline-flex border border-cyan/40 px-6 py-2.5 text-xs font-bold uppercase tracking-widest2 text-cyan transition-all duration-300 hover:bg-cyan hover:text-ink"
+          className="hidden md:inline-flex border border-orange/40 px-6 py-2.5 text-xs font-bold uppercase tracking-widest2 text-orange transition-all duration-300 hover:bg-orange hover:text-ink hover:shadow-[0_0_24px_rgba(255,106,0,0.4)]"
         >
           Teklif Al
         </Link>

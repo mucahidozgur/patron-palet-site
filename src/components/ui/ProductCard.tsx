@@ -26,18 +26,18 @@ export default function ProductCard({ product, index, onSelect }: Props) {
           onSelect(product);
         }
       }}
-      className="group relative flex h-full cursor-pointer flex-col border border-ivory/10 bg-surface p-8 transition-all duration-300 hover:border-cyan/40 hover:bg-panel focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan/50"
+      className="group relative flex h-full cursor-pointer flex-col border border-ivory/10 bg-surface p-8 transition-all duration-300 hover:-translate-y-1 hover:border-orange/40 hover:bg-panel hover:shadow-[0_14px_44px_-12px_rgba(255,106,0,0.25)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange/50"
     >
       <div className="flex items-center justify-between">
-        <span className="font-mono text-xs text-cyan">
+        <span className="font-mono text-xs text-orange">
           {String(index + 1).padStart(2, "0")}
         </span>
-        <span className="border border-cyan/30 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-cyan">
+        <span className="border border-orange/30 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-orange">
           {product.category}
         </span>
       </div>
 
-      <h3 className="font-display mt-6 text-xl font-bold uppercase tracking-wide text-white md:text-2xl">
+      <h3 className="font-display mt-6 text-xl font-bold uppercase tracking-wide text-orange md:text-2xl">
         {product.title}
       </h3>
       <p className="mt-2 font-mono text-xs text-ivory/70">{product.subtitle}</p>
@@ -51,7 +51,7 @@ export default function ProductCard({ product, index, onSelect }: Props) {
             key={feature}
             className="flex items-center gap-3 text-sm text-ivory/80"
           >
-            <span className="h-px w-4 bg-cyan" />
+            <span className="h-px w-4 bg-orange" />
             {feature}
           </li>
         ))}
@@ -59,7 +59,7 @@ export default function ProductCard({ product, index, onSelect }: Props) {
 
       <div className="mt-auto flex items-center justify-between pt-8">
         <span className="font-mono text-xs text-ivory/40">{product.year}</span>
-        <span className="text-sm font-semibold text-cyan transition-transform duration-300 group-hover:translate-x-1">
+        <span className="text-sm font-semibold text-orange transition-transform duration-300 group-hover:translate-x-1">
           Detay →
         </span>
       </div>

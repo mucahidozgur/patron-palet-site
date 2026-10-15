@@ -19,9 +19,9 @@ export default function About() {
           transition={{ duration: 0.7 }}
         >
           <p className="label-industrial mb-6">Hakkımızda</p>
-          <h2 className="heading-display text-3xl text-white md:text-5xl">
+          <h2 className="heading-display text-3xl text-orange md:text-5xl">
             Yılların Tecrübesi,
-            <span className="block bg-gradient-to-r from-cyan to-teal bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-orange to-amber bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(255,106,0,0.3)]">
               Aynı Kalite
             </span>
           </h2>
@@ -47,7 +47,7 @@ export default function About() {
           {values.map((value) => (
             <div
               key={value}
-              className="flex items-center gap-5 border border-ivory/10 bg-surface p-6 transition-colors duration-300 hover:border-cyan/40"
+              className="flex items-center gap-5 border border-ivory/10 bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-orange/40 hover:shadow-[0_14px_44px_-12px_rgba(255,106,0,0.2)]"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -56,7 +56,7 @@ export default function About() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="h-6 w-6 shrink-0 text-cyan"
+                className="h-6 w-6 shrink-0 text-orange drop-shadow-[0_0_8px_rgba(255,106,0,0.5)]"
                 aria-hidden="true"
               >
                 <path d="M20 6L9 17l-5-5" />

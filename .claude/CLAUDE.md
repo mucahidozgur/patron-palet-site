@@ -6,10 +6,10 @@ ve ihracat sandığı imalatı. Karanlık, teknolojik ve profesyonel estetik.
 İçerik kaynağı: tepeahsappalet.com · Tasarım referansı: cemabi.vercel.app.
 
 ## Tasarım Sistemi
-- **Zemin:** #0B0C10 (koyu lacivert-siyah)
-- **Yüzey:** #12151C · **Panel:** #1F2833
-- **Metin:** #C5C6C7 (açık gri) · **Beyaz:** #FFFFFF
-- **Vurgu:** #66FCF1 (cyan) · **İkincil:** #45A29E (koyu cyan)
+- **Zemin:** #0A0A0A (saf siyah)
+- **Yüzey:** #141414 · **Panel:** #1F1B17
+- **Metin:** #E8E2D8 (sıcak fildişi) · **Başlıklar:** turuncu
+- **Vurgu:** #FF6A00 (endüstriyel turuncu) · **İkincil:** #FFB347 (kehribar)
 - **Başlık fontu:** Orbitron (800, uppercase, geometrik)
 - **Gövde fontu:** Inter
 - **Kenar boşlukları:** `.container-editorial` (max 1400px; 24px mobil, 48px md, 80px lg)
@@ -17,7 +17,7 @@ ve ihracat sandığı imalatı. Karanlık, teknolojik ve profesyonel estetik.
 ## Teknoloji Yığını
 - Next.js 16.4.1 (App Router, Turbopack)
 - TypeScript (strict mode)
-- Tailwind CSS v4 (`@theme` tokenları: ink, surface, panel, ivory, cyan, teal)
+- Tailwind CSS v4 (`@theme` tokenları: ink, surface, panel, ivory, orange, amber)
 - Framer Motion 11 (entrance animasyonları; `MotionConfig reducedMotion="user"`)
 
 ## Kod Kuralları
@@ -28,13 +28,13 @@ ve ihracat sandığı imalatı. Karanlık, teknolojik ve profesyonel estetik.
 - Erişilebilirlik: WCAG AA kontrast, modalda ESC + focus trap + body scroll lock, klavye navigasyonu
 
 ## Özel Talimatlar
-- Logo: "PATRON PALET" gradyan metin (cyan→ivory→cyan), hover'da harf aralığı açılır
+- Logo: "PATRON PALET" gradyan metin (turuncu→kehribar→turuncu), shimmer akışı + hover'da harf aralığı açılır
 - Header: aşağı kaydırınca gizlenir (translateY -100%), yukarı kaydırınca geri gelir
 - Görseller: minimal; ürünler tipografik spesifikasyon kartlarıdır (fotoğraf yok)
 - Modal: ürün özellikleri + "Teklif Al" → #iletisim
 
 ## Yapılmayacaklar
-- Parlak/neon genel zemin (cyan yalnızca vurgu olarak)
+- Parlak/neon genel zemin (turuncu yalnızca vurgu olarak)
 - Otomatik oynayan video
-- 3 saniyeden uzun animasyonlar
+- 3 saniyeden uzun animasyonlar (ambiyans döngüleri dahil)
 - İnsan/araç içeren fotoğraflar (fotoğraf gerekiyorsa: saf palet yığını, özgür lisanslı + atıflı)

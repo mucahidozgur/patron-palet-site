@@ -49,7 +49,7 @@ export default function Services() {
           className="mb-16 max-w-2xl"
         >
           <p className="label-industrial mb-6">Hizmetlerimiz</p>
-          <h2 className="heading-display text-3xl text-white md:text-5xl">
+          <h2 className="heading-display text-3xl text-orange md:text-5xl">
             Tek Çatı Altında
           </h2>
           <p className="mt-6 font-light leading-relaxed text-ivory/60">
@@ -66,7 +66,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: index * 0.08 }}
-              className="group border border-ivory/10 bg-ink p-8 transition-all duration-300 hover:border-cyan/40"
+              className="group border border-ivory/10 bg-ink p-8 transition-all duration-300 hover:-translate-y-1 hover:border-orange/40 hover:shadow-[0_14px_44px_-12px_rgba(255,106,0,0.25)]"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -75,12 +75,12 @@ export default function Services() {
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="h-10 w-10 text-cyan transition-transform duration-300 group-hover:scale-110"
+                className="h-10 w-10 text-orange drop-shadow-[0_0_10px_rgba(255,106,0,0.5)] transition-transform duration-300 group-hover:scale-110"
                 aria-hidden="true"
               >
                 {service.icon}
               </svg>
-              <h3 className="font-display mt-6 text-lg font-bold uppercase tracking-wide text-white">
+              <h3 className="font-display mt-6 text-lg font-bold uppercase tracking-wide text-orange">
                 {service.title}
               </h3>
               <p className="mt-3 text-sm font-light leading-relaxed text-ivory/60">
