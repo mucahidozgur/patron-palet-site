@@ -47,3 +47,14 @@ npm install
 npm run dev      # http://localhost:3000
 npm run build    # production derleme
 ```
+
+## Deploy
+
+`serdar1.vercel.app`, Vercel'de `mucahidozgur/tr-patron-palet` GitHub reposunu izler (production branch: `main`). Her değişiklik iki repoya da push edilir — `origin` (`patron-palet-site`) ve Vercel'in izlediği `tr-patron-palet`; ikincisine gelen push otomatik production deploy tetikler.
+
+```bash
+git push origin main
+git push https://github.com/mucahidozgur/tr-patron-palet.git main:main
+```
+
+Manuel deploy: `vercel --prod --yes`
