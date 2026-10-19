@@ -80,7 +80,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-white/5 pt-8 text-center text-sm text-white/50">
+        <div className="mt-16 border-t border-white/5 pt-8 pb-24 text-center text-sm text-white/50 md:pb-8">
           © 2026 Patron Palet. Tüm hakları saklıdır.
         </div>
       </div>

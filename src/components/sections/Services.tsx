@@ -55,6 +55,13 @@ export default function Services() {
           <h2 className="heading-display text-3xl text-white md:text-5xl">
             Tek Çatı Altında
           </h2>
+          <motion.span
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
+            className="mt-7 block h-px w-24 origin-left bg-gradient-to-r from-tan via-tan/50 to-transparent"
+          />
           <p className="mt-6 font-light leading-relaxed text-white/60">
             Müşteri beklentileri doğrultusunda özel ve standart üretim —
             tüm ahşap palet ihtiyaçlarınız için tek adres.

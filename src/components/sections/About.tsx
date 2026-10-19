@@ -29,6 +29,13 @@ export default function About() {
                 Aynı Kalite
               </span>
             </h2>
+            <motion.span
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
+              className="mt-8 block h-px w-24 origin-left bg-gradient-to-r from-tan via-tan/50 to-transparent"
+            />
             <p className="mt-8 font-light leading-relaxed text-white/60">
               Alanında uzman, deneyimli kadromuz ile yılların vermiş olduğu
               tecrübe ve birikim sayesinde, müşterilerimize her zaman aynı
@@ -41,25 +48,25 @@ export default function About() {
             </p>
           </motion.div>
 
-          {/* Görsel kolajı: gorsel1 + gorsel4 */}
+          {/* Görsel kolajı: gorsel1 + gorsel4 — dengeli, orantılı kompozisyon */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="relative"
+            className="space-y-5 md:space-y-6"
           >
             <FramedImage
               src="/images/gorsel1.jpg"
               alt="İstiflenmiş ahşap paletler"
               caption="Sıfır Palet Üretim Hattı"
-              className="aspect-[4/3] w-full"
+              className="aspect-[16/9] w-full"
             />
             <FramedImage
               src="/images/gorsel4.jpg"
               alt="Sevkiyata hazır palet yığını"
               caption="Sevkiyata Hazır"
-              className="absolute -bottom-14 -left-4 hidden aspect-[16/10] w-1/2 border-4 border-ink shadow-[0_24px_60px_-20px_rgba(0,0,0,0.8)] sm:block md:-left-10"
+              className="ml-auto aspect-[16/9] w-4/5 sm:w-3/5"
             />
           </motion.div>
         </div>
@@ -70,7 +77,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="mt-28 grid grid-cols-1 gap-6 md:grid-cols-3"
+          className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-3"
         >
           {values.map((value, index) => (
             <div

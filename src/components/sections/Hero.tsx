@@ -39,6 +39,18 @@ export default function Hero() {
     `radial-gradient(520px circle at ${x}px ${y}px, rgba(212,163,115,0.13), transparent 70%)`
   );
 
+  // Görsel katmanında fareye tepki veren hafif paralaks
+  const parallaxX = useTransform(sx, (v) =>
+    typeof window === "undefined"
+      ? 0
+      : ((v - window.innerWidth / 2) / window.innerWidth) * -16
+  );
+  const parallaxY = useTransform(sy, (v) =>
+    typeof window === "undefined"
+      ? 0
+      : ((v - window.innerHeight / 2) / window.innerHeight) * -12
+  );
+
   return (
     <section
       className="relative flex min-h-screen items-center overflow-hidden bg-ink"
@@ -47,12 +59,13 @@ export default function Hero() {
         my.set(event.clientY);
       }}
     >
-      {/* Görsel katmanı: gorsel5 — yumuşak oturma zoom'u */}
+      {/* Görsel katmanı: gorsel5 — yumuşak oturma zoom'u + fare paralaksı */}
       <motion.div
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 2.2, ease: easeOutExpo }}
-        className="absolute inset-0"
+        style={{ x: parallaxX, y: parallaxY }}
+        className="absolute -inset-[3%]"
       >
         <Image
           src="/images/gorsel5.jpg"
@@ -66,7 +79,7 @@ export default function Hero() {
 
       {/* Okunabilirlik katmanları — görseli boğmayan hafif geçişler.
           Solda metin için koyu, sağda görsel neredeyse açık. */}
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/60 to-ink/15 md:from-ink/90 md:via-ink/40 md:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/50 to-ink/10 md:from-ink/85 md:via-ink/35 md:to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-ink" />
       <div className="tech-grid absolute inset-0 opacity-20" />
       <div className="grain absolute inset-0 opacity-[0.08] mix-blend-overlay" />
@@ -140,18 +153,20 @@ export default function Hero() {
           animate={introDone ? "visible" : "hidden"}
           className="mt-12 flex flex-wrap items-center gap-6"
         >
-          <a
+          <motion.a
+            whileTap={{ scale: 0.96 }}
             href="#iletisim"
             className="btn-sheen bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-caramel hover:shadow-[0_0_32px_rgba(212,163,115,0.5)]"
           >
             Teklif Al <span className="ml-1">→</span>
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            whileTap={{ scale: 0.96 }}
             href="#urunler"
             className="link-sweep text-sm font-semibold uppercase tracking-widest2 text-white transition-colors duration-300 hover:text-tan"
           >
             Ürünleri İncele
-          </a>
+          </motion.a>
         </motion.div>
 
         <motion.div

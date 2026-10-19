@@ -17,8 +17,8 @@ export default function Cta() {
         sizes="100vw"
         className="object-cover object-center"
       />
-      <div className="absolute inset-0 bg-ink/78" />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/55 to-ink" />
+      <div className="absolute inset-0 bg-ink/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/50 to-ink" />
       <div className="grain absolute inset-0 opacity-10" />
 
       <div className="container-editorial relative">
@@ -43,18 +43,20 @@ export default function Cta() {
           </p>
 
           <div className="relative mt-12 flex flex-wrap items-center justify-center gap-6">
-            <a
+            <motion.a
+              whileTap={{ scale: 0.96 }}
               href="tel:+905434329951"
               className="btn-sheen bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-caramel hover:shadow-[0_0_32px_rgba(212,163,115,0.5)]"
             >
               +90 (543) 432 99 51
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              whileTap={{ scale: 0.96 }}
               href="mailto:info@patronpalet.com"
               className="btn-sheen border border-tan/40 px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-tan transition-all duration-300 hover:bg-tan hover:text-ink hover:shadow-[0_0_24px_rgba(212,163,115,0.4)]"
             >
               E-posta Gönder
-            </a>
+            </motion.a>
           </div>
         </motion.div>
       </div>

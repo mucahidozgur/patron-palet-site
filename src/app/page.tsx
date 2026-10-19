@@ -9,6 +9,7 @@ import About from "@/components/sections/About";
 import Faq from "@/components/sections/Faq";
 import Cta from "@/components/sections/Cta";
 import Footer from "@/components/layout/Footer";
+import MobileCtaBar from "@/components/layout/MobileCtaBar";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Cta />
       </main>
       <Footer />
+      <MobileCtaBar />
     </IntroProvider>
   );
 }
