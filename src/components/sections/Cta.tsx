@@ -34,10 +34,10 @@ export default function Cta() {
           <p className="label-industrial relative mb-6">
             <span className="section-num mr-3">05</span>İletişim
           </p>
-          <h2 className="heading-display relative text-3xl text-white md:text-5xl">
+          <h2 className="heading-display relative text-3xl text-pine md:text-5xl">
             Projeniz İçin Teklif Alın
           </h2>
-          <p className="relative mx-auto mt-6 max-w-xl font-light leading-relaxed text-white/65">
+          <p className="relative mx-auto mt-6 max-w-xl font-light leading-relaxed text-pine/70">
             En uygun, en doğru ve en ekonomik çözümler için bizimle iletişime
             geçin. Ankara'dan Türkiye'ye ve tüm dünyaya hizmet veriyoruz.
           </p>
@@ -46,7 +46,7 @@ export default function Cta() {
             <motion.a
               whileTap={{ scale: 0.96 }}
               href="tel:+905434329951"
-              className="btn-sheen bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-caramel hover:shadow-[0_0_32px_rgba(212,163,115,0.5)]"
+              className="btn-sheen bg-pine px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-caramel hover:shadow-[0_0_32px_rgba(212,163,115,0.5)]"
             >
               +90 (543) 432 99 51
             </motion.a>

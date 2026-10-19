@@ -8,11 +8,11 @@ export default function Footer() {
           <div>
             <span className="flex items-center gap-3 text-lg md:text-xl">
               <span className="tr-badge shrink-0">TR</span>
-              <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(212,163,115,0.45)]">
+              <span className="logo-shimmer bg-gradient-to-r from-tan via-pine to-tan bg-clip-text font-display font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(212,163,115,0.45)]">
                 PATRON PALET
               </span>
             </span>
-            <p className="mt-4 max-w-xs text-base font-light text-white/60">
+            <p className="mt-4 max-w-xs text-base font-light text-pine/70">
               Sıfır ahşap palet üretimi, ikinci el palet alım satımı ve ihracat
               sandığı imalatı.
             </p>
@@ -20,7 +20,7 @@ export default function Footer() {
 
           <div>
             <p className="label-industrial mb-6 text-sm">Hızlı Linkler</p>
-            <ul className="space-y-3 text-base text-white/70">
+            <ul className="space-y-3 text-base text-pine/75">
               <li>
                 <Link
                   href="#urunler"
@@ -58,7 +58,7 @@ export default function Footer() {
 
           <div>
             <p className="label-industrial mb-6 text-sm">İletişim</p>
-            <ul className="space-y-3 text-base text-white/70">
+            <ul className="space-y-3 text-base text-pine/75">
               <li>
                 <a
                   href="tel:+905434329951"
@@ -80,7 +80,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-white/5 pt-8 pb-24 text-center text-sm text-white/50 md:pb-8">
+        <div className="mt-16 border-t border-pine/10 pt-8 pb-24 text-center text-sm text-pine/55 md:pb-8">
           © 2026 Patron Palet. Tüm hakları saklıdır.
         </div>
       </div>

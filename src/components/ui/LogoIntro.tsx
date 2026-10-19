@@ -96,12 +96,12 @@ export default function LogoIntro({ onComplete }: { onComplete: () => void }) {
         >
           <div className="flex items-center gap-3">
             <span className="tr-badge">TR</span>
-            <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display text-lg font-bold leading-none tracking-[0.12em] text-transparent drop-shadow-[0_0_24px_rgba(212,163,115,0.45)] md:text-[36px] md:tracking-[0.2em] lg:text-[40px]">
+            <span className="logo-shimmer bg-gradient-to-r from-tan via-pine to-tan bg-clip-text font-display text-lg font-bold leading-none tracking-[0.12em] text-transparent drop-shadow-[0_0_24px_rgba(212,163,115,0.45)] md:text-[36px] md:tracking-[0.2em] lg:text-[40px]">
               PATRON PALET
             </span>
           </div>
           <motion.span
-            className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 md:text-[11px] md:tracking-[0.3em]"
+            className="font-mono text-[9px] uppercase tracking-[0.25em] text-pine/50 md:text-[11px] md:tracking-[0.3em]"
             animate={{ opacity: target ? 0 : 1 }}
             transition={{ duration: 0.3 }}
           >

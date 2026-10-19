@@ -52,7 +52,7 @@ export default function Services() {
           <p className="label-industrial mb-6">
             <span className="section-num mr-3">02</span>Hizmetlerimiz
           </p>
-          <h2 className="heading-display text-3xl text-white md:text-5xl">
+          <h2 className="heading-display text-3xl text-pine md:text-5xl">
             Tek Çatı Altında
           </h2>
           <motion.span
@@ -62,7 +62,7 @@ export default function Services() {
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
             className="mt-7 block h-px w-24 origin-left bg-gradient-to-r from-tan via-tan/50 to-transparent"
           />
-          <p className="mt-6 font-light leading-relaxed text-white/60">
+          <p className="mt-6 font-light leading-relaxed text-pine/70">
             Müşteri beklentileri doğrultusunda özel ve standart üretim —
             tüm ahşap palet ihtiyaçlarınız için tek adres.
           </p>
@@ -76,8 +76,21 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: index * 0.08 }}
-              className="group border border-white/10 bg-ink p-8 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.3)]"
+              onMouseMove={(event) => {
+                const rect = event.currentTarget.getBoundingClientRect();
+                event.currentTarget.style.setProperty(
+                  "--mx",
+                  `${event.clientX - rect.left}px`
+                );
+                event.currentTarget.style.setProperty(
+                  "--my",
+                  `${event.clientY - rect.top}px`
+                );
+              }}
+              className="group relative border border-pine/10 bg-ink p-8 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.3)]"
             >
+              {/* Fareyi takip eden bronz ışıma */}
+              <span className="spot-card pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="flex items-start justify-between">
                 <svg
                   viewBox="0 0 24 24"
@@ -91,14 +104,14 @@ export default function Services() {
                 >
                   {service.icon}
                 </svg>
-                <span className="font-mono text-xs text-white/25">
+                <span className="font-mono text-xs text-pine/35">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
-              <h3 className="font-display mt-6 text-lg font-bold uppercase tracking-wide text-white">
+              <h3 className="font-display mt-6 text-lg font-bold uppercase tracking-wide text-pine">
                 {service.title}
               </h3>
-              <p className="mt-3 text-sm font-light leading-relaxed text-white/60">
+              <p className="mt-3 text-sm font-light leading-relaxed text-pine/70">
                 {service.description}
               </p>
             </motion.article>

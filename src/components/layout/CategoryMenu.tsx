@@ -79,8 +79,12 @@ export default function CategoryMenu() {
         aria-expanded={open}
         aria-controls="kategori-menu"
         aria-label={open ? "Kategorileri kapat" : "Kategorileri aç"}
-        className="group flex h-11 w-11 flex-col items-center justify-center gap-[5px] border border-tan/40 transition-all duration-300 hover:border-tan hover:shadow-[0_0_20px_rgba(212,163,115,0.35)]"
+        className="group relative flex h-11 w-11 flex-col items-center justify-center gap-[5px] border border-tan/40 transition-all duration-300 hover:border-tan hover:shadow-[0_0_20px_rgba(212,163,115,0.35)]"
       >
+        <span
+          aria-hidden="true"
+          className="ring-pulse pointer-events-none absolute inset-0 border border-tan/40"
+        />
         <span
           className={`h-[2px] w-5 bg-tan transition-all duration-300 ${
             open ? "translate-y-[7px] rotate-45" : "group-hover:w-6"
@@ -119,7 +123,7 @@ export default function CategoryMenu() {
                 variants={listVariants}
                 initial="hidden"
                 animate="visible"
-                className="border-t border-white/10"
+                className="border-t border-pine/10"
               >
                 {CATEGORIES.map((item) => (
                   <motion.a
@@ -127,12 +131,12 @@ export default function CategoryMenu() {
                     variants={itemVariants}
                     href={item.href}
                     onClick={close}
-                    className="group flex items-baseline gap-4 border-b border-white/5 py-4 last:border-0"
+                    className="group flex items-baseline gap-4 border-b border-pine/10 py-4 last:border-0"
                   >
                     <span className="font-mono text-[10px] text-tan/60 transition-colors duration-300 group-hover:text-tan">
                       {item.num}
                     </span>
-                    <span className="font-display text-sm font-bold uppercase tracking-[0.18em] text-white transition-all duration-300 group-hover:translate-x-1 group-hover:text-tan">
+                    <span className="font-display text-sm font-bold uppercase tracking-[0.18em] text-pine transition-all duration-300 group-hover:translate-x-1 group-hover:text-tan">
                       {item.label}
                     </span>
                     <span className="ml-auto text-sm text-tan/0 transition-all duration-300 group-hover:text-tan">
@@ -176,7 +180,7 @@ export default function CategoryMenu() {
                   variants={listVariants}
                   initial="hidden"
                   animate="visible"
-                  className="mt-8 flex-1 border-t border-white/10"
+                  className="mt-8 flex-1 border-t border-pine/10"
                 >
                   {CATEGORIES.map((item) => (
                     <motion.a
@@ -184,12 +188,12 @@ export default function CategoryMenu() {
                       variants={itemVariants}
                       href={item.href}
                       onClick={close}
-                      className="group flex items-baseline gap-5 border-b border-white/5 py-6"
+                      className="group flex items-baseline gap-5 border-b border-pine/10 py-6"
                     >
                       <span className="font-mono text-xs text-tan/60 transition-colors duration-300 group-hover:text-tan">
                         {item.num}
                       </span>
-                      <span className="font-display text-2xl font-bold uppercase tracking-[0.14em] text-white transition-all duration-300 group-hover:translate-x-1.5 group-hover:text-tan">
+                      <span className="font-display text-2xl font-bold uppercase tracking-[0.14em] text-pine transition-all duration-300 group-hover:translate-x-1.5 group-hover:text-tan">
                         {item.label}
                       </span>
                       <span className="ml-auto text-tan/0 transition-all duration-300 group-hover:text-tan">

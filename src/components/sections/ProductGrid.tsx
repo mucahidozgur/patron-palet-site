@@ -23,7 +23,7 @@ export default function ProductGrid() {
           <p className="label-industrial mb-6">
             <span className="section-num mr-3">01</span>Ürün Kataloğu
           </p>
-          <h2 className="heading-display text-3xl text-white md:text-5xl">
+          <h2 className="heading-display text-3xl text-pine md:text-5xl">
             Ürünlerimiz
           </h2>
           <motion.span
@@ -33,7 +33,7 @@ export default function ProductGrid() {
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
             className="mt-7 block h-px w-24 origin-left bg-gradient-to-r from-tan via-tan/50 to-transparent"
           />
-          <p className="mt-6 font-light leading-relaxed text-white/60">
+          <p className="mt-6 font-light leading-relaxed text-pine/70">
             Stoklarımızdaki ürün çeşitliliği ile belirlenen zaman çizelgesi
             dahilinde, ekonomik ve garantili ürün hizmeti.
           </p>

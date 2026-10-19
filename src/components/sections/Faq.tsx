@@ -39,7 +39,7 @@ export default function Faq() {
           <p className="label-industrial mb-6">
             <span className="section-num mr-3">04</span>Sık Sorulan Sorular
           </p>
-          <h2 className="heading-display text-3xl text-white md:text-5xl">
+          <h2 className="heading-display text-3xl text-pine md:text-5xl">
             Merak Edilenler
           </h2>
           <motion.span
@@ -60,14 +60,14 @@ export default function Faq() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: index * 0.06 }}
             >
-              <details className="group border border-white/10 bg-ink transition-colors duration-300 hover:border-tan/30">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 p-6 font-medium text-white transition-colors duration-300 group-open:text-tan">
+              <details className="group border border-pine/10 bg-ink transition-colors duration-300 hover:border-tan/30">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 p-6 font-medium text-pine transition-colors duration-300 group-open:text-tan">
                   {faq.q}
                   <span className="text-tan transition-transform duration-300 group-open:rotate-45">
                     +
                   </span>
                 </summary>
-                <p className="border-t border-white/5 p-6 pt-5 text-sm font-light leading-relaxed text-white/60">
+                <p className="border-t border-pine/10 p-6 pt-5 text-sm font-light leading-relaxed text-pine/70">
                   {faq.a}
                 </p>
               </details>

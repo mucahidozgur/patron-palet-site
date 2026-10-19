@@ -44,7 +44,7 @@ export default function ShowcaseBand() {
           className="max-w-3xl"
         >
           <span className="tr-badge mb-8 text-sm">TR</span>
-          <blockquote className="heading-display text-2xl leading-snug text-white md:text-4xl">
+          <blockquote className="heading-display text-2xl leading-snug text-pine md:text-4xl">
             Ahşabın gücü,{" "}
             <span className="logo-shimmer bg-gradient-to-r from-tan to-caramel bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(212,163,115,0.4)]">
               teknolojinin hassasiyetiyle.

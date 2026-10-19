@@ -37,7 +37,7 @@ export default function ProductCard({ product, index, onSelect }: Props) {
           `${event.clientY - rect.top}px`
         );
       }}
-      className="group relative flex h-full cursor-pointer flex-col border border-white/10 bg-surface p-8 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:bg-panel hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.3)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-tan/50"
+      className="group relative flex h-full cursor-pointer flex-col border border-pine/10 bg-surface p-8 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:bg-panel hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.3)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-tan/50"
     >
       {/* Fareyi takip eden bronz ışıma */}
       <span className="spot-card pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -48,7 +48,7 @@ export default function ProductCard({ product, index, onSelect }: Props) {
 
       {/* Hover'da ışık süpürmesi */}
       <span className="pointer-events-none absolute inset-0 overflow-hidden">
-        <span className="absolute -left-1/2 top-0 h-full w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-700 ease-out group-hover:left-full" />
+        <span className="absolute -left-1/2 top-0 h-full w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-pine/10 to-transparent transition-all duration-700 ease-out group-hover:left-full" />
       </span>
 
       <div className="flex items-center justify-between">
@@ -60,11 +60,11 @@ export default function ProductCard({ product, index, onSelect }: Props) {
         </span>
       </div>
 
-      <h3 className="font-display mt-6 text-xl font-bold uppercase tracking-wide text-white md:text-2xl">
+      <h3 className="font-display mt-6 text-xl font-bold uppercase tracking-wide text-pine md:text-2xl">
         {product.title}
       </h3>
-      <p className="mt-2 font-mono text-xs text-white/70">{product.subtitle}</p>
-      <p className="mt-4 text-sm font-light leading-relaxed text-white/60">
+      <p className="mt-2 font-mono text-xs text-pine/75">{product.subtitle}</p>
+      <p className="mt-4 text-sm font-light leading-relaxed text-pine/70">
         {product.description}
       </p>
 
@@ -72,7 +72,7 @@ export default function ProductCard({ product, index, onSelect }: Props) {
         {product.features.map((feature) => (
           <li
             key={feature}
-            className="flex items-center gap-3 text-sm text-white/80"
+            className="flex items-center gap-3 text-sm text-pine/85"
           >
             <span className="h-px w-4 bg-tan" />
             {feature}
@@ -81,7 +81,7 @@ export default function ProductCard({ product, index, onSelect }: Props) {
       </ul>
 
       <div className="mt-auto flex items-center justify-between pt-8">
-        <span className="font-mono text-xs text-white/40">{product.year}</span>
+        <span className="font-mono text-xs text-pine/45">{product.year}</span>
         <span className="text-sm font-semibold text-tan transition-transform duration-300 group-hover:translate-x-1">
           Detay →
         </span>

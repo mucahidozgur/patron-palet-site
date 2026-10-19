@@ -7,6 +7,7 @@
   --color-ivory: #FFFFFF;
   --color-tan: #D4A373;
   --color-caramel: #F2D5AE;
+  --color-pine: #A8C49F;
   --font-sans: var(--font-sans), system-ui, sans-serif;
   --font-display: var(--font-display), system-ui, sans-serif;
   --tracking-widest2: 0.25em;
@@ -232,10 +233,36 @@ body {
   outline-offset: 3px;
 }
 
+/* Hero görselinde süzülen ışık taraması (masaüstü, 2.8s döngü) */
+@keyframes scanSweep {
+  0% { transform: translateX(-140%) skewX(-14deg); opacity: 0; }
+  12% { opacity: 0.8; }
+  50% { opacity: 0.35; }
+  88% { opacity: 0.8; }
+  100% { transform: translateX(260%) skewX(-14deg); opacity: 0; }
+}
+
+.scan-sweep {
+  animation: scanSweep 2.8s ease-in-out infinite;
+}
+
+/* Menü butonu nabız halkası (2.2s döngü) */
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  60% { transform: scale(1.45); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.ring-pulse {
+  animation: ringPulse 2.2s ease-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .logo-shimmer,
   .glow-pulse,
-  .scroll-dot {
+  .scroll-dot,
+  .scan-sweep,
+  .ring-pulse {
     animation: none;
   }
 

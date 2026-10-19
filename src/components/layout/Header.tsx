@@ -63,7 +63,7 @@ export default function Header() {
             <span className="tr-badge shrink-0 transition-all duration-500 group-hover:bg-tan group-hover:text-ink">
               TR
             </span>
-            <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display font-bold tracking-[0.12em] text-transparent drop-shadow-[0_0_16px_rgba(212,163,115,0.45)] transition-all duration-500 group-hover:tracking-[0.2em] sm:tracking-[0.15em] md:tracking-[0.2em]">
+            <span className="logo-shimmer bg-gradient-to-r from-tan via-pine to-tan bg-clip-text font-display font-bold tracking-[0.12em] text-transparent drop-shadow-[0_0_16px_rgba(212,163,115,0.45)] transition-all duration-500 group-hover:tracking-[0.2em] sm:tracking-[0.15em] md:tracking-[0.2em]">
               PATRON PALET
             </span>
           </span>

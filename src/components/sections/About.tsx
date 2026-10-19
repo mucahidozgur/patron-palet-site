@@ -23,7 +23,7 @@ export default function About() {
             <p className="label-industrial mb-6">
               <span className="section-num mr-3">03</span>Hakkımızda
             </p>
-            <h2 className="heading-display text-3xl text-white md:text-5xl">
+            <h2 className="heading-display text-3xl text-pine md:text-5xl">
               Yılların Tecrübesi,
               <span className="logo-shimmer block bg-gradient-to-r from-tan to-caramel bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(212,163,115,0.35)]">
                 Aynı Kalite
@@ -36,12 +36,12 @@ export default function About() {
               transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
               className="mt-8 block h-px w-24 origin-left bg-gradient-to-r from-tan via-tan/50 to-transparent"
             />
-            <p className="mt-8 font-light leading-relaxed text-white/60">
+            <p className="mt-8 font-light leading-relaxed text-pine/70">
               Alanında uzman, deneyimli kadromuz ile yılların vermiş olduğu
               tecrübe ve birikim sayesinde, müşterilerimize her zaman aynı
               kalitede hizmet vermek için çalışmaktayız.
             </p>
-            <p className="mt-6 font-light leading-relaxed text-white/60">
+            <p className="mt-6 font-light leading-relaxed text-pine/70">
               Müşteri beklentileri doğrultusunda özel ve standart palet üretimi
               yaparak tüm isteklerinizi karşılamaktayız. Tüm ahşap palet ürün ve
               hizmetlerimizde garanti ve kalite ile her zaman yanınızdayız.
@@ -82,8 +82,20 @@ export default function About() {
           {values.map((value, index) => (
             <div
               key={value}
-              className="group flex items-center gap-5 border border-white/10 bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.25)]"
+              onMouseMove={(event) => {
+                const rect = event.currentTarget.getBoundingClientRect();
+                event.currentTarget.style.setProperty(
+                  "--mx",
+                  `${event.clientX - rect.left}px`
+                );
+                event.currentTarget.style.setProperty(
+                  "--my",
+                  `${event.clientY - rect.top}px`
+                );
+              }}
+              className="group relative flex items-center gap-5 border border-pine/10 bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.25)]"
             >
+              <span className="spot-card pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <span className="font-mono text-xs text-tan/60">
                 {String(index + 1).padStart(2, "0")}
               </span>
@@ -99,7 +111,7 @@ export default function About() {
               >
                 <path d="M20 6L9 17l-5-5" />
               </svg>
-              <span className="text-base font-medium text-white">{value}</span>
+              <span className="text-base font-medium text-pine">{value}</span>
             </div>
           ))}
         </motion.div>
