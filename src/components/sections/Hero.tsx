@@ -9,6 +9,7 @@ import {
   type Variants,
 } from "framer-motion";
 import { useIntroDone } from "@/components/layout/IntroProvider";
+import FramedImage from "@/components/ui/FramedImage";
 import { easeOutExpo, wordContainer, wordFadeUp } from "@/lib/animations";
 
 const CHIPS = [
@@ -59,13 +60,15 @@ export default function Hero() {
         my.set(event.clientY);
       }}
     >
-      {/* Görsel katmanı: gorsel5 — yumuşak oturma zoom'u + fare paralaksı */}
+      {/* Görsel katmanı: gorsel5 — yumuşak oturma zoom'u + fare paralaksı.
+          Yalnızca masaüstünde tam ekran arka plan; mobilde görsel içerik
+          akışında tam kadraj gösterilir (aşağıda). */}
       <motion.div
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 2.2, ease: easeOutExpo }}
         style={{ x: parallaxX, y: parallaxY }}
-        className="absolute -inset-[3%]"
+        className="absolute -inset-[3%] hidden md:block"
       >
         <Image
           src="/images/gorsel5.jpg"
@@ -78,16 +81,19 @@ export default function Hero() {
       </motion.div>
 
       {/* Okunabilirlik katmanları — görseli boğmayan hafif geçişler.
-          Solda metin için koyu, sağda görsel neredeyse açık. */}
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/50 to-ink/10 md:from-ink/85 md:via-ink/35 md:to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-ink" />
+          Solda metin için koyu, sağda görsel neredeyse açık. (Masaüstü) */}
+      <div className="absolute inset-0 hidden bg-gradient-to-r from-ink/90 via-ink/50 to-ink/10 md:block md:from-ink/85 md:via-ink/35 md:to-transparent" />
+      <div className="absolute inset-0 hidden bg-gradient-to-b from-ink/50 via-transparent to-ink md:block" />
       <div className="tech-grid absolute inset-0 opacity-20" />
       <div className="grain absolute inset-0 opacity-[0.08] mix-blend-overlay" />
 
-      {/* Sıcak ışık hüzmesi */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-tan/10 to-transparent mix-blend-soft-light" />
+      {/* Sıcak ışık hüzmesi (masaüstü) */}
+      <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-tr from-transparent via-tan/10 to-transparent mix-blend-soft-light md:block" />
 
-      {/* İnce sahne çerçevesi */}
+      {/* Mobil: içerik arkasında sıcak ışıma */}
+      <div className="glow-pulse pointer-events-none absolute bottom-0 left-1/2 h-[420px] w-[420px] -translate-x-1/2 translate-y-1/3 rounded-full bg-tan/12 blur-[130px] md:hidden" />
+
+      {/* İnce sahne çerçevesi (masaüstü) */}
       <div className="pointer-events-none absolute inset-4 z-10 hidden border border-white/10 md:block lg:inset-6" />
 
       {/* Fare spot ışığı */}
@@ -184,10 +190,26 @@ export default function Hero() {
             </span>
           ))}
         </motion.div>
+
+        {/* Mobil: gorsel5 tam kadraj — kırpılmadan, çekiçli usta dahil */}
+        <motion.div
+          variants={fade(0.95)}
+          initial="hidden"
+          animate={introDone ? "visible" : "hidden"}
+          className="mt-14 md:hidden"
+        >
+          <FramedImage
+            src="/images/gorsel5.jpg"
+            alt="Ahşap palet üretim hattında çalışan usta"
+            caption="Ankara Üretim Hattı"
+            className="aspect-[16/9] w-full"
+            sizes="100vw"
+          />
+        </motion.div>
       </div>
 
-      {/* Aşağı kaydır göstergesi */}
-      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
+      {/* Aşağı kaydır göstergesi (masaüstü) */}
+      <div className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 md:block">
         <motion.div
           variants={fade(1.1)}
           initial="hidden"

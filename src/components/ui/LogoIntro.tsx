@@ -61,10 +61,11 @@ export default function LogoIntro({ onComplete }: { onComplete: () => void }) {
       <div className="grain absolute inset-0 opacity-[0.14]" />
       <div className="glow-pulse pointer-events-none absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-tan/10 blur-[120px]" />
 
-      {/* Logo kilidi: header logosunun 2 katı boyutunda (uçuşta 0.5 ölçeklenir) */}
+      {/* Logo kilidi: header logosunun 2 katı boyutunda (uçuşta 0.5 ölçeklenir).
+          Mobilde dikey dizilim — küçük ekranlara sığar. */}
       <motion.div
         ref={lockupRef}
-        className="relative flex items-center gap-6"
+        className="relative flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-6"
         initial={{ opacity: 0, scale: 0.92 }}
         animate={{
           opacity: 1,
@@ -85,23 +86,28 @@ export default function LogoIntro({ onComplete }: { onComplete: () => void }) {
           width={88}
           height={88}
           priority
-          className="h-[88px] w-[88px] rounded-lg ring-1 ring-tan/50 shadow-[0_0_44px_rgba(212,163,115,0.4)]"
+          className="h-20 w-20 rounded-lg ring-1 ring-tan/50 shadow-[0_0_44px_rgba(212,163,115,0.4)] md:h-[88px] md:w-[88px]"
         />
-        <div className="flex flex-col gap-3 text-[36px] md:text-[40px]">
+        {/* Uçuş sırasında yazılar kararır; header kendi kilidini açar */}
+        <motion.div
+          className="flex flex-col gap-3 text-lg md:text-[36px] lg:text-[40px]"
+          animate={{ opacity: target ? 0 : 1 }}
+          transition={{ duration: 0.35 }}
+        >
           <div className="flex items-center gap-3">
             <span className="tr-badge">TR</span>
-            <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display text-[36px] font-bold leading-none tracking-[0.2em] text-transparent drop-shadow-[0_0_24px_rgba(212,163,115,0.45)] md:text-[40px]">
+            <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display text-lg font-bold leading-none tracking-[0.12em] text-transparent drop-shadow-[0_0_24px_rgba(212,163,115,0.45)] md:text-[36px] md:tracking-[0.2em] lg:text-[40px]">
               PATRON PALET
             </span>
           </div>
           <motion.span
-            className="font-mono text-[11px] uppercase tracking-[0.3em] text-white/45"
+            className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/45 md:text-[11px] md:tracking-[0.3em]"
             animate={{ opacity: target ? 0 : 1 }}
             transition={{ duration: 0.3 }}
           >
             Ahşap Palet Üretimi — MMXXVI
           </motion.span>
-        </div>
+        </motion.div>
       </motion.div>
 
       {/* 3 saniyelik dolum hattı */}
