@@ -60,15 +60,22 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[68%_center]"
+          className="object-cover object-[72%_center] brightness-[1.08] saturate-[1.12]"
         />
       </motion.div>
 
-      {/* Okunabilirlik katmanları */}
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/20" />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-transparent to-ink" />
-      <div className="tech-grid absolute inset-0 opacity-40" />
-      <div className="grain absolute inset-0 opacity-[0.12] mix-blend-overlay" />
+      {/* Okunabilirlik katmanları — görseli boğmayan hafif geçişler.
+          Solda metin için koyu, sağda görsel neredeyse açık. */}
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/60 to-ink/15 md:from-ink/90 md:via-ink/40 md:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-ink" />
+      <div className="tech-grid absolute inset-0 opacity-20" />
+      <div className="grain absolute inset-0 opacity-[0.08] mix-blend-overlay" />
+
+      {/* Sıcak ışık hüzmesi */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-tan/10 to-transparent mix-blend-soft-light" />
+
+      {/* İnce sahne çerçevesi */}
+      <div className="pointer-events-none absolute inset-4 z-10 hidden border border-white/10 md:block lg:inset-6" />
 
       {/* Fare spot ışığı */}
       <motion.div

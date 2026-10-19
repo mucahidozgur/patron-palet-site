@@ -17,8 +17,8 @@ export default function Cta() {
         sizes="100vw"
         className="object-cover object-center"
       />
-      <div className="absolute inset-0 bg-ink/88" />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/60 to-ink" />
+      <div className="absolute inset-0 bg-ink/78" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/55 to-ink" />
       <div className="grain absolute inset-0 opacity-10" />
 
       <div className="container-editorial relative">
@@ -27,7 +27,7 @@ export default function Cta() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
-          className="tech-grid relative overflow-hidden border border-tan/25 bg-ink/55 p-10 text-center backdrop-blur-sm md:p-20"
+          className="tech-grid relative overflow-hidden border border-tan/25 bg-ink/45 p-10 text-center backdrop-blur-md md:p-20"
         >
           <div className="glow-pulse pointer-events-none absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-tan/10 blur-[100px]" />
 

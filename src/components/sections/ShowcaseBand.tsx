@@ -31,7 +31,7 @@ export default function ShowcaseBand() {
         />
       </motion.div>
 
-      <div className="absolute inset-0 bg-ink/65" />
+      <div className="absolute inset-0 bg-ink/55" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink via-transparent to-ink" />
       <div className="grain absolute inset-0 opacity-10" />
 
