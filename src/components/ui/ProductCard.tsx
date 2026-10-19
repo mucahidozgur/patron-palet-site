@@ -37,7 +37,7 @@ export default function ProductCard({ product, index, onSelect }: Props) {
           `${event.clientY - rect.top}px`
         );
       }}
-      className="group relative flex h-full cursor-pointer flex-col border border-pine/10 bg-surface p-8 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:bg-panel hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.3)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-tan/50"
+      className="group relative flex h-full cursor-pointer flex-col border border-tan/15 bg-surface p-8 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:bg-panel hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.3)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-tan/50"
     >
       {/* Fareyi takip eden bronz ışıma */}
       <span className="spot-card pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

@@ -134,7 +134,10 @@ export default function Hero() {
           animate={introDone ? "visible" : "hidden"}
           className="heading-display text-4xl leading-[1.1] text-pine md:text-6xl lg:text-7xl"
         >
-          <motion.span variants={wordFadeUp} className="inline-block">
+          <motion.span
+            variants={wordFadeUp}
+            className="logo-shimmer inline-block bg-gradient-to-r from-pine via-caramel to-pine bg-clip-text text-transparent drop-shadow-[0_0_26px_rgba(124,201,123,0.45)]"
+          >
             Patron
           </motion.span>{" "}
           <motion.span

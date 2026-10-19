@@ -2,7 +2,11 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-tan/10 bg-ink">
+    <footer className="bg-ink">
+      <div
+        className="h-px w-full bg-gradient-to-r from-transparent via-tan/40 to-transparent"
+        aria-hidden="true"
+      />
       <div className="container-editorial py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           <div>

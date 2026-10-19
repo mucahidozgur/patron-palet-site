@@ -19,7 +19,7 @@ export default function FramedImage({
   src,
   alt,
   caption,
-  className = "border-pine/10",
+  className = "border-tan/20",
   priority = false,
   sizes = "(min-width: 1024px) 50vw, 100vw",
   position,

@@ -87,7 +87,7 @@ export default function Services() {
                   `${event.clientY - rect.top}px`
                 );
               }}
-              className="group relative border border-pine/10 bg-ink p-8 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.3)]"
+              className="group relative border border-tan/15 bg-ink p-8 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.3)]"
             >
               {/* Fareyi takip eden bronz ışıma */}
               <span className="spot-card pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

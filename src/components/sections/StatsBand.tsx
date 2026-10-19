@@ -85,7 +85,7 @@ export default function StatsBand() {
               key={stat.label}
               variants={staggerItem}
               className={
-                index > 0 ? "lg:border-l lg:border-pine/10 lg:pl-10" : ""
+                index > 0 ? "lg:border-l lg:border-tan/15 lg:pl-10" : ""
               }
             >
               <p className="logo-shimmer bg-gradient-to-r from-pine via-caramel to-pine bg-clip-text font-display text-4xl font-extrabold text-transparent drop-shadow-[0_0_24px_rgba(124,201,123,0.35)] md:text-5xl">

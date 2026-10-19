@@ -93,7 +93,7 @@ export default function ProductModal({ product, onClose }: Props) {
             {product.features.map((feature) => (
               <li
                 key={feature}
-                className="border border-pine/10 bg-ink/60 px-4 py-3 text-sm text-pine"
+                className="border border-tan/20 bg-ink/60 px-4 py-3 text-sm text-pine"
               >
                 {feature}
               </li>

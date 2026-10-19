@@ -66,7 +66,7 @@ export default function About() {
               src="/images/gorsel4.jpg"
               alt="Sevkiyata hazır palet yığını"
               caption="Sevkiyata Hazır"
-              className="ml-auto aspect-[16/9] w-4/5 sm:w-3/5"
+              className="aspect-[16/9] w-full"
             />
           </motion.div>
         </div>
@@ -93,7 +93,7 @@ export default function About() {
                   `${event.clientY - rect.top}px`
                 );
               }}
-              className="group relative flex items-center gap-5 border border-pine/10 bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.25)]"
+              className="group relative flex items-center gap-5 border border-tan/15 bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.25)]"
             >
               <span className="spot-card pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <span className="font-mono text-xs text-tan/60">

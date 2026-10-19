@@ -123,7 +123,7 @@ export default function CategoryMenu() {
                 variants={listVariants}
                 initial="hidden"
                 animate="visible"
-                className="border-t border-pine/10"
+                className="border-t border-tan/15"
               >
                 {CATEGORIES.map((item) => (
                   <motion.a
@@ -131,7 +131,7 @@ export default function CategoryMenu() {
                     variants={itemVariants}
                     href={item.href}
                     onClick={close}
-                    className="group flex items-baseline gap-4 border-b border-pine/10 py-4 last:border-0"
+                    className="group flex items-baseline gap-4 border-b border-tan/10 py-4 last:border-0"
                   >
                     <span className="font-mono text-[10px] text-tan/60 transition-colors duration-300 group-hover:text-tan">
                       {item.num}
@@ -180,7 +180,7 @@ export default function CategoryMenu() {
                   variants={listVariants}
                   initial="hidden"
                   animate="visible"
-                  className="mt-8 flex-1 border-t border-pine/10"
+                  className="mt-8 flex-1 border-t border-tan/15"
                 >
                   {CATEGORIES.map((item) => (
                     <motion.a
@@ -188,7 +188,7 @@ export default function CategoryMenu() {
                       variants={itemVariants}
                       href={item.href}
                       onClick={close}
-                      className="group flex items-baseline gap-5 border-b border-pine/10 py-6"
+                      className="group flex items-baseline gap-5 border-b border-tan/10 py-6"
                     >
                       <span className="font-mono text-xs text-tan/60 transition-colors duration-300 group-hover:text-tan">
                         {item.num}
