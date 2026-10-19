@@ -101,7 +101,7 @@ export default function LogoIntro({ onComplete }: { onComplete: () => void }) {
             </span>
           </div>
           <motion.span
-            className="font-mono text-[9px] uppercase tracking-[0.25em] text-pine/50 md:text-[11px] md:tracking-[0.3em]"
+            className="font-mono text-[9px] uppercase tracking-[0.25em] text-pine/75 md:text-[11px] md:tracking-[0.3em]"
             animate={{ opacity: target ? 0 : 1 }}
             transition={{ duration: 0.3 }}
           >

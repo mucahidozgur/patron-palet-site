@@ -62,7 +62,7 @@ export default function Services() {
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
             className="mt-7 block h-px w-24 origin-left bg-gradient-to-r from-tan via-tan/50 to-transparent"
           />
-          <p className="mt-6 font-light leading-relaxed text-pine/70">
+          <p className="mt-6 font-light leading-relaxed text-pine/90">
             Müşteri beklentileri doğrultusunda özel ve standart üretim —
             tüm ahşap palet ihtiyaçlarınız için tek adres.
           </p>
@@ -104,14 +104,14 @@ export default function Services() {
                 >
                   {service.icon}
                 </svg>
-                <span className="font-mono text-xs text-pine/35">
+                <span className="font-mono text-xs text-pine/60">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
               <h3 className="font-display mt-6 text-lg font-bold uppercase tracking-wide text-pine">
                 {service.title}
               </h3>
-              <p className="mt-3 text-sm font-light leading-relaxed text-pine/70">
+              <p className="mt-3 text-sm font-light leading-relaxed text-pine/90">
                 {service.description}
               </p>
             </motion.article>

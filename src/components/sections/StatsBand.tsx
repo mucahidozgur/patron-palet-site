@@ -70,7 +70,7 @@ export default function StatsBand() {
   return (
     <section
       aria-label="Öne çıkan rakamlar"
-      className="relative border-y border-pine/10 bg-surface/40 py-16 md:py-20"
+      className="relative border-y border-tan/15 bg-surface/70 py-16 md:py-20"
     >
       <div className="container-editorial">
         <motion.div
@@ -88,7 +88,7 @@ export default function StatsBand() {
                 index > 0 ? "lg:border-l lg:border-pine/10 lg:pl-10" : ""
               }
             >
-              <p className="font-display text-4xl font-extrabold text-pine drop-shadow-[0_0_24px_rgba(212,163,115,0.25)] md:text-5xl">
+              <p className="logo-shimmer bg-gradient-to-r from-pine via-caramel to-pine bg-clip-text font-display text-4xl font-extrabold text-transparent drop-shadow-[0_0_24px_rgba(124,201,123,0.35)] md:text-5xl">
                 <Counter
                   to={stat.value}
                   prefix={stat.prefix}
@@ -96,7 +96,7 @@ export default function StatsBand() {
                 />
               </p>
               <p className="label-industrial mt-3 text-sm">{stat.label}</p>
-              <p className="mt-2 text-sm font-light text-pine/55">
+              <p className="mt-2 text-sm font-light text-pine/80">
                 {stat.note}
               </p>
             </motion.div>

@@ -63,8 +63,8 @@ export default function ProductCard({ product, index, onSelect }: Props) {
       <h3 className="font-display mt-6 text-xl font-bold uppercase tracking-wide text-pine md:text-2xl">
         {product.title}
       </h3>
-      <p className="mt-2 font-mono text-xs text-pine/75">{product.subtitle}</p>
-      <p className="mt-4 text-sm font-light leading-relaxed text-pine/70">
+      <p className="mt-2 font-mono text-xs text-pine/95">{product.subtitle}</p>
+      <p className="mt-4 text-sm font-light leading-relaxed text-pine/90">
         {product.description}
       </p>
 
@@ -72,7 +72,7 @@ export default function ProductCard({ product, index, onSelect }: Props) {
         {product.features.map((feature) => (
           <li
             key={feature}
-            className="flex items-center gap-3 text-sm text-pine/85"
+            className="flex items-center gap-3 text-sm text-pine"
           >
             <span className="h-px w-4 bg-tan" />
             {feature}
@@ -81,7 +81,7 @@ export default function ProductCard({ product, index, onSelect }: Props) {
       </ul>
 
       <div className="mt-auto flex items-center justify-between pt-8">
-        <span className="font-mono text-xs text-pine/45">{product.year}</span>
+        <span className="font-mono text-xs text-pine/70">{product.year}</span>
         <span className="text-sm font-semibold text-tan transition-transform duration-300 group-hover:translate-x-1">
           Detay →
         </span>

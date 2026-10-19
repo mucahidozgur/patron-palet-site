@@ -48,7 +48,7 @@ export default function FramedImage({
       {caption && (
         <figcaption className="absolute bottom-0 left-0 right-0 flex items-center justify-between gap-4 p-5 md:p-6">
           <span className="label-industrial text-xs md:text-sm">{caption}</span>
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-pine/55">
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-pine/80">
             PP—TR
           </span>
         </figcaption>

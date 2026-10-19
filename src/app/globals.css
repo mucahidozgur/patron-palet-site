@@ -7,7 +7,7 @@
   --color-ivory: #FFFFFF;
   --color-tan: #D4A373;
   --color-caramel: #F2D5AE;
-  --color-pine: #A8C49F;
+  --color-pine: #7CC97B;
   --font-sans: var(--font-sans), system-ui, sans-serif;
   --font-display: var(--font-display), system-ui, sans-serif;
   --tracking-widest2: 0.25em;
@@ -58,6 +58,8 @@ body {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   text-wrap: balance;
+  /* Yeşil ışıma: başlıklar göz alıcı */
+  text-shadow: 0 0 26px rgba(124, 201, 123, 0.4), 0 0 60px rgba(124, 201, 123, 0.18);
 }
 
 /* Kesit numarası: "01 —" mono önek */
@@ -75,13 +77,33 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--color-tan);
+  text-shadow: 0 0 14px rgba(212, 163, 115, 0.45);
+}
+
+/* Etiketin başındaki nabız noktası */
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.7); }
+}
+
+.label-industrial::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 0.6em;
+  border-radius: 9999px;
+  background: var(--color-tan);
+  box-shadow: 0 0 10px rgba(212, 163, 115, 0.8);
+  animation: dotPulse 2s ease-in-out infinite;
+  vertical-align: middle;
 }
 
 /* Teknik çizim ızgarası */
 .tech-grid {
   background-image:
-    linear-gradient(rgba(212, 163, 115, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212, 163, 115, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(212, 163, 115, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 163, 115, 0.07) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
@@ -262,7 +284,8 @@ body {
   .glow-pulse,
   .scroll-dot,
   .scan-sweep,
-  .ring-pulse {
+  .ring-pulse,
+  .label-industrial::before {
     animation: none;
   }
 

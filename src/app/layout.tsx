@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="tr"
       className={`${orbitron.variable} ${inter.variable}`}
     >
-      <body className="bg-ink text-ivory font-sans antialiased">
+      <body className="bg-ink text-pine font-sans antialiased">
         <MotionConfig reducedMotion="user">{children}</MotionConfig>
       </body>
     </html>

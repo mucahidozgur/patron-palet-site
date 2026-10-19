@@ -67,7 +67,7 @@ export default function Faq() {
                     +
                   </span>
                 </summary>
-                <p className="border-t border-pine/10 p-6 pt-5 text-sm font-light leading-relaxed text-pine/70">
+                <p className="border-t border-pine/10 p-6 pt-5 text-sm font-light leading-relaxed text-pine/90">
                   {faq.a}
                 </p>
               </details>

@@ -8,7 +8,7 @@ ve ihracat sandığı imalatı. Karanlık, teknolojik ve profesyonel estetik.
 ## Tasarım Sistemi
 - **Zemin:** #181008 (koyu espresso kahve)
 - **Yüzey:** #211610 · **Panel:** #2E1F14
-- **Metin:** #FFFFFF (beyaz — başlıklar dahil)
+- **Metin:** #7CC97B (karadeniz yeşili — başlıklar dahil, yeşil ışıma ile)
 - **Vurgu:** #D4A373 (bronz/ten rengi) · **İkincil:** #F2D5AE (karamel)
 - **Başlık fontu:** Orbitron (800, uppercase, geometrik)
 - **Gövde fontu:** Inter
@@ -17,7 +17,7 @@ ve ihracat sandığı imalatı. Karanlık, teknolojik ve profesyonel estetik.
 ## Teknoloji Yığını
 - Next.js 16.4.1 (App Router, Turbopack)
 - TypeScript (strict mode)
-- Tailwind CSS v4 (`@theme` tokenları: ink, surface, panel, ivory, tan, caramel)
+- Tailwind CSS v4 (`@theme` tokenları: ink, surface, panel, tan, caramel, pine)
 - Framer Motion 11 (entrance animasyonları; `MotionConfig reducedMotion="user"`)
 
 ## Kod Kuralları

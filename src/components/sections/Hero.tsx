@@ -93,6 +93,9 @@ export default function Hero() {
         <span className="scan-sweep absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-transparent via-pine/12 to-transparent" />
       </div>
 
+      {/* Sağ tarafta bronz derinlik ışıması (usta bölgesini vurgular) */}
+      <div className="glow-pulse pointer-events-none absolute right-[-140px] top-1/3 h-[540px] w-[540px] rounded-full bg-tan/15 blur-[130px] [animation-delay:-1.5s]" />
+
       {/* İnce sahne çerçevesi (masaüstü) */}
       <div className="pointer-events-none absolute inset-4 z-10 hidden border border-pine/10 md:block lg:inset-6" />
 
@@ -108,7 +111,7 @@ export default function Hero() {
         variants={fade(1.2)}
         initial="hidden"
         animate={introDone ? "visible" : "hidden"}
-        className="absolute right-10 top-1/2 hidden -translate-y-1/2 font-mono text-[10px] uppercase tracking-[0.45em] text-pine/40 [writing-mode:vertical-rl] lg:block"
+        className="absolute right-10 top-1/2 hidden -translate-y-1/2 font-mono text-[10px] uppercase tracking-[0.45em] text-pine/65 [writing-mode:vertical-rl] lg:block"
         aria-hidden="true"
       >
         Ankara — TR · Est. MMXXVI
@@ -146,7 +149,7 @@ export default function Hero() {
           variants={fade(0.45)}
           initial="hidden"
           animate={introDone ? "visible" : "hidden"}
-          className="mt-8 max-w-2xl text-lg font-light leading-relaxed text-pine/85 md:text-xl"
+          className="mt-8 max-w-2xl text-lg font-light leading-relaxed text-pine md:text-xl"
         >
           Sıfır ahşap palet üretimi, ikinci el palet alım satımı ve ihracat
           sandığı imalatı. En uygun, en doğru ve en ekonomik çözümler için tek
@@ -184,7 +187,7 @@ export default function Hero() {
           {CHIPS.map((chip) => (
             <span
               key={chip}
-              className="border border-pine/15 bg-ink/55 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-pine/85 backdrop-blur-sm transition-colors duration-300 hover:border-tan hover:text-tan"
+              className="border border-tan/30 bg-ink/55 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-pine backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-tan hover:text-tan hover:shadow-[0_8px_24px_-8px_rgba(212,163,115,0.5)]"
             >
               {chip}
             </span>
@@ -200,7 +203,7 @@ export default function Hero() {
           animate={introDone ? "visible" : "hidden"}
           className="flex flex-col items-center gap-3"
         >
-          <span className="font-mono text-[9px] uppercase tracking-[0.4em] text-pine/45">
+          <span className="font-mono text-[9px] uppercase tracking-[0.4em] text-pine/70">
             Kaydır
           </span>
           <span className="flex h-10 w-6 items-start justify-center rounded-full border border-tan/40 p-1.5">

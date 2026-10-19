@@ -36,12 +36,12 @@ export default function About() {
               transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
               className="mt-8 block h-px w-24 origin-left bg-gradient-to-r from-tan via-tan/50 to-transparent"
             />
-            <p className="mt-8 font-light leading-relaxed text-pine/70">
+            <p className="mt-8 font-light leading-relaxed text-pine/90">
               Alanında uzman, deneyimli kadromuz ile yılların vermiş olduğu
               tecrübe ve birikim sayesinde, müşterilerimize her zaman aynı
               kalitede hizmet vermek için çalışmaktayız.
             </p>
-            <p className="mt-6 font-light leading-relaxed text-pine/70">
+            <p className="mt-6 font-light leading-relaxed text-pine/90">
               Müşteri beklentileri doğrultusunda özel ve standart palet üretimi
               yaparak tüm isteklerinizi karşılamaktayız. Tüm ahşap palet ürün ve
               hizmetlerimizde garanti ve kalite ile her zaman yanınızdayız.

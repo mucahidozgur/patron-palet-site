@@ -27,9 +27,14 @@ export default function Cta() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
-          className="tech-grid relative overflow-hidden border border-tan/25 bg-ink/45 p-10 text-center backdrop-blur-md md:p-20"
+          className="tech-grid relative overflow-hidden border border-tan/40 bg-ink/40 p-10 text-center backdrop-blur-md md:p-20"
         >
           <div className="glow-pulse pointer-events-none absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-tan/10 blur-[100px]" />
+
+          {/* Kart üzerinde süzülen ışık taraması */}
+          <div className="pointer-events-none absolute inset-0 overflow-hidden">
+            <span className="scan-sweep absolute inset-y-0 left-0 w-1/5 bg-gradient-to-r from-transparent via-pine/10 to-transparent" />
+          </div>
 
           <p className="label-industrial relative mb-6">
             <span className="section-num mr-3">05</span>İletişim
@@ -37,7 +42,7 @@ export default function Cta() {
           <h2 className="heading-display relative text-3xl text-pine md:text-5xl">
             Projeniz İçin Teklif Alın
           </h2>
-          <p className="relative mx-auto mt-6 max-w-xl font-light leading-relaxed text-pine/70">
+          <p className="relative mx-auto mt-6 max-w-xl font-light leading-relaxed text-pine/90">
             En uygun, en doğru ve en ekonomik çözümler için bizimle iletişime
             geçin. Ankara'dan Türkiye'ye ve tüm dünyaya hizmet veriyoruz.
           </p>

@@ -74,7 +74,7 @@ export default function ProductModal({ product, onClose }: Props) {
         >
           <div className="flex items-center justify-between">
             <p className="label-industrial">{product.category}</p>
-            <span className="font-mono text-xs text-pine/45">
+            <span className="font-mono text-xs text-pine/70">
               {product.year}
             </span>
           </div>
@@ -82,10 +82,10 @@ export default function ProductModal({ product, onClose }: Props) {
           <h2 className="heading-display mt-6 text-3xl text-pine md:text-4xl">
             {product.title}
           </h2>
-          <p className="mt-3 font-mono text-sm text-pine/75">
+          <p className="mt-3 font-mono text-sm text-pine/95">
             {product.subtitle}
           </p>
-          <p className="mt-6 font-light leading-relaxed text-pine/75">
+          <p className="mt-6 font-light leading-relaxed text-pine/95">
             {product.description}
           </p>
 
@@ -93,7 +93,7 @@ export default function ProductModal({ product, onClose }: Props) {
             {product.features.map((feature) => (
               <li
                 key={feature}
-                className="border border-pine/10 bg-ink/60 px-4 py-3 text-sm text-pine/90"
+                className="border border-pine/10 bg-ink/60 px-4 py-3 text-sm text-pine"
               >
                 {feature}
               </li>
@@ -125,7 +125,7 @@ export default function ProductModal({ product, onClose }: Props) {
             <button
               type="button"
               onClick={onClose}
-              className="text-sm font-semibold uppercase tracking-widest2 text-pine/75 transition-colors duration-300 hover:text-tan"
+              className="text-sm font-semibold uppercase tracking-widest2 text-pine/95 transition-colors duration-300 hover:text-tan"
             >
               Kapat
             </button>
