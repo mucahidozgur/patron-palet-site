@@ -58,3 +58,5 @@ git push https://github.com/mucahidozgur/tr-patron-palet.git main:main
 ```
 
 Manuel deploy: `vercel --prod --yes`
+
+Deploy zinciri: GitHub webhook'u (`push` olayı) → Vercel deploy hook'u `github-push` → production deploy.
