@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import FramedImage from "@/components/ui/FramedImage";
 
 const services = [
   {
@@ -48,7 +49,9 @@ export default function Services() {
           transition={{ duration: 0.7 }}
           className="mb-16 max-w-2xl"
         >
-          <p className="label-industrial mb-6">Hizmetlerimiz</p>
+          <p className="label-industrial mb-6">
+            <span className="section-num mr-3">02</span>Hizmetlerimiz
+          </p>
           <h2 className="heading-display text-3xl text-white md:text-5xl">
             Tek Çatı Altında
           </h2>
@@ -68,18 +71,23 @@ export default function Services() {
               transition={{ duration: 0.6, delay: index * 0.08 }}
               className="group border border-white/10 bg-ink p-8 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.3)]"
             >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-10 w-10 text-tan drop-shadow-[0_0_10px_rgba(212,163,115,0.5)] transition-transform duration-300 group-hover:scale-110"
-                aria-hidden="true"
-              >
-                {service.icon}
-              </svg>
+              <div className="flex items-start justify-between">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-10 w-10 text-tan drop-shadow-[0_0_10px_rgba(212,163,115,0.5)] transition-transform duration-300 group-hover:scale-110"
+                  aria-hidden="true"
+                >
+                  {service.icon}
+                </svg>
+                <span className="font-mono text-xs text-white/25">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
               <h3 className="font-display mt-6 text-lg font-bold uppercase tracking-wide text-white">
                 {service.title}
               </h3>
@@ -89,6 +97,23 @@ export default function Services() {
             </motion.article>
           ))}
         </div>
+
+        {/* Üretim bandı: gorsel3 */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8 }}
+          className="mt-16"
+        >
+          <FramedImage
+            src="/images/gorsel3.jpg"
+            alt="Üretim alanında istiflenmiş ahşap paletler"
+            caption="Ankara Üretim Hattı — ISPM 15 Sertifikalı"
+            className="aspect-[16/9] w-full md:aspect-[21/9]"
+            sizes="100vw"
+          />
+        </motion.div>
       </div>
     </section>
   );

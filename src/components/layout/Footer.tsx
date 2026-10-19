@@ -6,8 +6,11 @@ export default function Footer() {
       <div className="container-editorial py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           <div>
-            <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display text-lg font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(212,163,115,0.45)]">
-              PATRON PALET
+            <span className="flex items-center gap-3 text-lg md:text-xl">
+              <span className="tr-badge shrink-0">TR</span>
+              <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(212,163,115,0.45)]">
+                PATRON PALET
+              </span>
             </span>
             <p className="mt-4 max-w-xs text-base font-light text-white/60">
               Sıfır ahşap palet üretimi, ikinci el palet alım satımı ve ihracat

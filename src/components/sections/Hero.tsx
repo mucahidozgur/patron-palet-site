@@ -1,7 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { fadeUp, wordContainer, wordFadeUp } from "@/lib/animations";
+import Image from "next/image";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  type Variants,
+} from "framer-motion";
+import { useIntroDone } from "@/components/layout/IntroProvider";
+import { easeOutExpo, wordContainer, wordFadeUp } from "@/lib/animations";
 
 const CHIPS = [
   "Sıfır Palet Üretimi",
@@ -10,25 +18,91 @@ const CHIPS = [
   "Ankara'dan Dünyaya",
 ];
 
-export default function Hero() {
-  return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-ink">
-      <div className="tech-grid absolute inset-0" />
-      <div className="glow-pulse pointer-events-none absolute left-1/2 top-1/3 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-tan/10 blur-[140px]" />
+const fade = (delay: number): Variants => ({
+  hidden: { opacity: 0, y: 34 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.75, ease: easeOutExpo, delay },
+  },
+});
 
-      <div className="container-editorial relative z-10 pt-40 pb-24">
-        <motion.p
-          {...fadeUp}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="label-industrial mb-8"
+export default function Hero() {
+  const introDone = useIntroDone();
+
+  // Fareyi takip eden bronz ışık
+  const mx = useMotionValue(-600);
+  const my = useMotionValue(-600);
+  const sx = useSpring(mx, { stiffness: 55, damping: 18, mass: 0.6 });
+  const sy = useSpring(my, { stiffness: 55, damping: 18, mass: 0.6 });
+  const spotlight = useTransform([sx, sy], ([x, y]: number[]) =>
+    `radial-gradient(520px circle at ${x}px ${y}px, rgba(212,163,115,0.13), transparent 70%)`
+  );
+
+  return (
+    <section
+      className="relative flex min-h-screen items-center overflow-hidden bg-ink"
+      onMouseMove={(event) => {
+        mx.set(event.clientX);
+        my.set(event.clientY);
+      }}
+    >
+      {/* Görsel katmanı: gorsel5 — yumuşak oturma zoom'u */}
+      <motion.div
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 2.2, ease: easeOutExpo }}
+        className="absolute inset-0"
+      >
+        <Image
+          src="/images/gorsel5.jpg"
+          alt="Ahşap palet yığını"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[68%_center]"
+        />
+      </motion.div>
+
+      {/* Okunabilirlik katmanları */}
+      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-transparent to-ink" />
+      <div className="tech-grid absolute inset-0 opacity-40" />
+      <div className="grain absolute inset-0 opacity-[0.12] mix-blend-overlay" />
+
+      {/* Fare spot ışığı */}
+      <motion.div
+        style={{ background: spotlight }}
+        className="pointer-events-none absolute inset-0"
+        aria-hidden="true"
+      />
+
+      {/* Kenar HUD yazısı */}
+      <motion.span
+        variants={fade(1.2)}
+        initial="hidden"
+        animate={introDone ? "visible" : "hidden"}
+        className="absolute right-10 top-1/2 hidden -translate-y-1/2 font-mono text-[10px] uppercase tracking-[0.45em] text-white/35 [writing-mode:vertical-rl] lg:block"
+        aria-hidden="true"
+      >
+        Ankara — TR · Est. MMXXVI
+      </motion.span>
+
+      <div className="container-editorial relative z-10 pt-40 pb-28">
+        <motion.div
+          variants={fade(0.15)}
+          initial="hidden"
+          animate={introDone ? "visible" : "hidden"}
+          className="mb-8 flex items-center gap-4"
         >
-          Ahşap Palet Üretimi — MMXXVI
-        </motion.p>
+          <span className="tr-badge text-sm">TR</span>
+          <p className="label-industrial">Ahşap Palet Üretimi — MMXXVI</p>
+        </motion.div>
 
         <motion.h1
           variants={wordContainer}
           initial="hidden"
-          animate="visible"
+          animate={introDone ? "visible" : "hidden"}
           className="heading-display text-4xl leading-[1.1] text-white md:text-6xl lg:text-7xl"
         >
           <motion.span variants={wordFadeUp} className="inline-block">
@@ -43,9 +117,10 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          {...fadeUp}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="mt-8 max-w-2xl text-lg font-light leading-relaxed text-white/80 md:text-xl"
+          variants={fade(0.45)}
+          initial="hidden"
+          animate={introDone ? "visible" : "hidden"}
+          className="mt-8 max-w-2xl text-lg font-light leading-relaxed text-white/85 md:text-xl"
         >
           Sıfır ahşap palet üretimi, ikinci el palet alım satımı ve ihracat
           sandığı imalatı. En uygun, en doğru ve en ekonomik çözümler için tek
@@ -53,37 +128,56 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.7, delay: 0.6 }}
+          variants={fade(0.6)}
+          initial="hidden"
+          animate={introDone ? "visible" : "hidden"}
           className="mt-12 flex flex-wrap items-center gap-6"
         >
           <a
             href="#iletisim"
-            className="bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-caramel hover:shadow-[0_0_32px_rgba(212,163,115,0.5)]"
+            className="btn-sheen bg-white px-8 py-4 text-sm font-bold uppercase tracking-widest2 text-ink transition-all duration-300 hover:bg-caramel hover:shadow-[0_0_32px_rgba(212,163,115,0.5)]"
           >
             Teklif Al <span className="ml-1">→</span>
           </a>
           <a
             href="#urunler"
-            className="text-sm font-semibold uppercase tracking-widest2 text-white transition-colors duration-300 hover:text-tan"
+            className="link-sweep text-sm font-semibold uppercase tracking-widest2 text-white transition-colors duration-300 hover:text-tan"
           >
             Ürünleri İncele
           </a>
         </motion.div>
 
         <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.7, delay: 0.8 }}
+          variants={fade(0.8)}
+          initial="hidden"
+          animate={introDone ? "visible" : "hidden"}
           className="mt-16 flex flex-wrap gap-3"
         >
           {CHIPS.map((chip) => (
             <span
               key={chip}
-              className="border border-white/15 bg-surface/60 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white/80 transition-colors duration-300 hover:border-tan hover:text-tan"
+              className="border border-white/15 bg-ink/55 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white/80 backdrop-blur-sm transition-colors duration-300 hover:border-tan hover:text-tan"
             >
               {chip}
             </span>
           ))}
+        </motion.div>
+      </div>
+
+      {/* Aşağı kaydır göstergesi */}
+      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
+        <motion.div
+          variants={fade(1.1)}
+          initial="hidden"
+          animate={introDone ? "visible" : "hidden"}
+          className="flex flex-col items-center gap-3"
+        >
+          <span className="font-mono text-[9px] uppercase tracking-[0.4em] text-white/40">
+            Kaydır
+          </span>
+          <span className="flex h-10 w-6 items-start justify-center rounded-full border border-tan/40 p-1.5">
+            <span className="scroll-dot h-1.5 w-1.5 rounded-full bg-tan" />
+          </span>
         </motion.div>
       </div>
     </section>

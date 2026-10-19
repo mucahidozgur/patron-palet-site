@@ -3,11 +3,21 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { useIntroDone } from "@/components/layout/IntroProvider";
 
 export default function Header() {
+  const introDone = useIntroDone();
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  // Sayfa ilerleme çizgisi (üst kenarda bronz süpürme)
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 26,
+    mass: 0.4,
+  });
 
   // Aşağı kaydırınca gizlenir, yukarı kaydırınca geri gelir.
   useEffect(() => {
@@ -26,7 +36,11 @@ export default function Header() {
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
-      animate={{ y: hidden ? "-100%" : 0, opacity: 1 }}
+      animate={
+        introDone
+          ? { y: hidden ? "-100%" : 0, opacity: 1 }
+          : { y: -80, opacity: 0 }
+      }
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
         scrolled
@@ -44,33 +58,38 @@ export default function Header() {
             height={44}
             className="rounded-md ring-1 ring-tan/40 transition-all duration-500 group-hover:scale-110 group-hover:ring-tan"
           />
-          <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display text-lg font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(212,163,115,0.45)] transition-all duration-500 group-hover:tracking-[0.28em] md:text-xl">
-            PATRON PALET
+          <span className="flex items-center gap-3 text-lg md:text-xl">
+            <span className="tr-badge shrink-0 transition-all duration-500 group-hover:bg-tan group-hover:text-ink">
+              TR
+            </span>
+            <span className="logo-shimmer bg-gradient-to-r from-tan via-white to-tan bg-clip-text font-display font-bold tracking-[0.2em] text-transparent drop-shadow-[0_0_16px_rgba(212,163,115,0.45)] transition-all duration-500 group-hover:tracking-[0.28em]">
+              PATRON PALET
+            </span>
           </span>
         </Link>
 
-        <nav className="hidden md:flex gap-10">
+        <nav className="hidden gap-10 md:flex">
           <Link
             href="#urunler"
-            className="text-sm uppercase tracking-widest text-white/80 hover:text-tan transition-colors duration-300"
+            className="link-sweep text-sm uppercase tracking-widest text-white/80 hover:text-tan transition-colors duration-300"
           >
             Ürünler
           </Link>
           <Link
             href="#hizmetler"
-            className="text-sm uppercase tracking-widest text-white/80 hover:text-tan transition-colors duration-300"
+            className="link-sweep text-sm uppercase tracking-widest text-white/80 hover:text-tan transition-colors duration-300"
           >
             Hizmetler
           </Link>
           <Link
             href="#hakkimizda"
-            className="text-sm uppercase tracking-widest text-white/80 hover:text-tan transition-colors duration-300"
+            className="link-sweep text-sm uppercase tracking-widest text-white/80 hover:text-tan transition-colors duration-300"
           >
             Hakkımızda
           </Link>
           <Link
             href="#sss"
-            className="text-sm uppercase tracking-widest text-white/80 hover:text-tan transition-colors duration-300"
+            className="link-sweep text-sm uppercase tracking-widest text-white/80 hover:text-tan transition-colors duration-300"
           >
             SSS
           </Link>
@@ -78,11 +97,18 @@ export default function Header() {
 
         <Link
           href="#iletisim"
-          className="hidden md:inline-flex border border-tan/40 px-6 py-2.5 text-xs font-bold uppercase tracking-widest2 text-tan transition-all duration-300 hover:bg-tan hover:text-ink hover:shadow-[0_0_24px_rgba(212,163,115,0.4)]"
+          className="btn-sheen hidden md:inline-flex border border-tan/40 px-6 py-2.5 text-xs font-bold uppercase tracking-widest2 text-tan transition-all duration-300 hover:bg-tan hover:text-ink hover:shadow-[0_0_24px_rgba(212,163,115,0.4)]"
         >
           Teklif Al
         </Link>
       </div>
+
+      {/* Bronz ilerleme çizgisi */}
+      <motion.span
+        style={{ scaleX: progress }}
+        className="absolute bottom-0 left-0 right-0 h-[2px] origin-left bg-gradient-to-r from-tan via-caramel to-tan"
+        aria-hidden="true"
+      />
     </motion.header>
   );
 }

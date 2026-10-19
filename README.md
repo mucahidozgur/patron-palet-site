@@ -23,11 +23,16 @@ Anahtar sınıflar: `.heading-display` (Orbitron 800 uppercase), `.label-industr
 
 ## Sayfa Yapısı
 
-`Header → Hero → ProductGrid → Services → About → Faq → Cta → Footer`
+`Header → Hero → StatsBand → ProductGrid → ShowcaseBand → Services → About → Faq → Cta → Footer`
 
-- **Header:** aşağı kaydırınca gizlenir, yukarı kaydırınca geri gelir; gradyan metin logo (cyan→ivory→cyan).
-- **Ürünler:** tipografik spesifikasyon kartları (fotoğrafsız); kart tıklanınca `ProductModal` açılır (ESC, focus trap, scroll lock).
-- **Erişilebilirlik:** WCAG AA kontrast, `MotionConfig reducedMotion="user"`, klavye navigasyonu.
+- **Açılış sahnesi (`LogoIntro`):** logo ekranın ortasında belirir, 3 saniye kalır, ardından header'daki yerine küçülerek uçar (`IntroProvider` ile Header/Hero giriş animasyonları senkronlanır).
+- **Header:** aşağı kaydırınca gizlenir, yukarı kaydırınca geri gelir; gradyan metin logo (bronz→beyaz→bronz) + TR rozeti; üst kenarda bronz kaydırma ilerleme çizgisi.
+- **Hero:** gorsel5 arka planı, fareyi takip eden bronz spot ışığı, kelime kelime başlık girişi.
+- **StatsBand:** görünüme girince sayan rakamlar (81 il, ISPM 15, 3 uzmanlık, %100 garanti).
+- **Ürünler:** tipografik spesifikasyon kartları (fotoğrafsız); fareyi takip eden ışıma; kart tıklanınca `ProductModal` açılır (ESC, focus trap, scroll lock).
+- **ShowcaseBand:** gorsel2 tam genişlik paralaks bandı + marka cümlesi.
+- **Görseller:** gorsel1–6 site sahibi tarafından sağlandı; yerleşim için `public/images/CREDITS.md`.
+- **Erişilebilirlik:** WCAG AA kontrast, `MotionConfig reducedMotion="user"`, klavye navigasyonu, `:focus-visible` bronz halka.
 
 ## Görseller
 

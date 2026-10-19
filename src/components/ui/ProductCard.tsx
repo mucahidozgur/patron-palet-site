@@ -26,8 +26,22 @@ export default function ProductCard({ product, index, onSelect }: Props) {
           onSelect(product);
         }
       }}
+      onMouseMove={(event) => {
+        const rect = event.currentTarget.getBoundingClientRect();
+        event.currentTarget.style.setProperty(
+          "--mx",
+          `${event.clientX - rect.left}px`
+        );
+        event.currentTarget.style.setProperty(
+          "--my",
+          `${event.clientY - rect.top}px`
+        );
+      }}
       className="group relative flex h-full cursor-pointer flex-col border border-white/10 bg-surface p-8 transition-all duration-300 hover:-translate-y-1 hover:border-tan/40 hover:bg-panel hover:shadow-[0_14px_44px_-12px_rgba(212,163,115,0.3)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-tan/50"
     >
+      {/* Fareyi takip eden bronz ışıma */}
+      <span className="spot-card pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
       {/* Köşe braketleri */}
       <span className="pointer-events-none absolute left-3 top-3 h-4 w-4 border-l border-t border-tan/0 transition-all duration-300 group-hover:border-tan" />
       <span className="pointer-events-none absolute bottom-3 right-3 h-4 w-4 border-b border-r border-tan/0 transition-all duration-300 group-hover:border-tan" />

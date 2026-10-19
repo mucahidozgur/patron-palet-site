@@ -12,4 +12,14 @@ Tüm fotoğraflar Wikimedia Commons'tan, ilgili özgür lisanslar altında kulla
 | agir-yuk-paleti.jpg | [File:EUR-pallets stacked 2.jpg](https://commons.wikimedia.org/wiki/File:EUR-pallets_stacked_2.jpg) | CC0 |
 | ozel-olcu-palet.jpg | [File:Wood-texture-tree-cross-section-0a.jpg](https://commons.wikimedia.org/wiki/File:Wood-texture-tree-cross-section-0a.jpg) | CC BY-SA 3.0 |
 
+## Site sahibi tarafından sağlanan görseller
+
+`gorsel1.jpg` – `gorsel6.jpg` (kök dizindeki `image/` klasöründen optimize edilerek aktarıldı) müşteri tarafından sağlanmıştır; dış kaynak lisansı yoktur.
+
+- gorsel5.jpg → Hero arka planı
+- gorsel2.jpg → Tam genişlik vitrin bandı
+- gorsel3.jpg → Hizmetler üretim bandı
+- gorsel1.jpg + gorsel4.jpg → Hakkımızda kolajı
+- gorsel6.jpg → İletişim arka planı
+
 > Canlıya almadan önce CC BY-SA lisanslı görseller için yazar adlarıyla tam atıf eklenmesi önerilir (dosya sayfalarında "Artist" alanı).

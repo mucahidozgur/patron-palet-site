@@ -20,7 +20,9 @@ export default function ProductGrid() {
           transition={{ duration: 0.7 }}
           className="mb-16 max-w-2xl"
         >
-          <p className="label-industrial mb-6">Ürün Kataloğu</p>
+          <p className="label-industrial mb-6">
+            <span className="section-num mr-3">01</span>Ürün Kataloğu
+          </p>
           <h2 className="heading-display text-3xl text-white md:text-5xl">
             Ürünlerimiz
           </h2>

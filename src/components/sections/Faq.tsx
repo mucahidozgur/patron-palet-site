@@ -36,7 +36,9 @@ export default function Faq() {
           transition={{ duration: 0.7 }}
           className="mb-16"
         >
-          <p className="label-industrial mb-6">Sık Sorulan Sorular</p>
+          <p className="label-industrial mb-6">
+            <span className="section-num mr-3">04</span>Sık Sorulan Sorular
+          </p>
           <h2 className="heading-display text-3xl text-white md:text-5xl">
             Merak Edilenler
           </h2>

@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Patron Palet — Sıfır Palet Üretimi & İkinci El Palet Alım Satımı",
+  title: "TR Patron Palet — Sıfır Palet Üretimi & İkinci El Palet Alım Satımı",
   description:
     "Ankara'dan Türkiye'ye ve tüm dünyaya: sıfır ahşap palet üretimi, ikinci el palet alım satımı ve ISPM 15 uyumlu ihracat sandığı imalatı.",
 };
